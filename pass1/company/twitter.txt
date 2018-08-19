@@ -1,0 +1,35 @@
+
+#
+Title
+Acceptance
+Difficulty
+Frequency
+433Minimum Genetic Mutation35.7%Mutation35Medium
+296Best Meeting Point   49.5%49Hard
+269Alien Dictionary     23.4%23Hard
+251Flatten 2D Vector    37.5%37Medium
+218The Skyline Problem24.8%Problem24Hard
+341Flatten Nested List Iterator36.7%Iterator36Medium
+161One Edit Distance    29.9%29Medium
+12Integer to Roman42.0%Roman42Medium
+355Design Twitter23.8%Twitter23Medium
+146LRU Cache15.9%Cache15Hard
+202Happy Number38.6%Number38Easy
+140Word Break II21.5%II21Hard
+42Trapping Rain Water34.5%Water34Hard
+60Permutation Sequence26.6%Sequence26Medium
+149Max Points on a Line15.2%Line15Hard
+208Implement Trie (Prefix Tree)Tree25.6%Tree25Medium
+10Regular Expression Matching23.2%Matching23Hard
+206Reverse Linked List42.6%List42Easy
+23HardMerge k Sorted Lists25.3%Lists25Hard
+206ReverseValid Parentheses31.4%Parentheses31Easy
+235Lowest Common Ancestor of a Binary Search Tree25Medium37.8%Tree25Medium37Easy
+118Pascal's Triangle35.9%Triangle35Easy
+433MinimumMultiply Strings25.4%Strings25Medium
+56Merge Intervals27.6%Intervals27Hard
+323Number of Connected Components in an Undirected Graph    45.5%45Medium
+44Wildcard Matching23Hard18.6%Matching23Hard18Hard
+407Trapping Rain Water II21Hard34.1%II21Hard34Hard
+380Insert Delete GetRandom O(1)GetRandom36.5%GetRandom36Hard
+378Kth Smallest Element in a Sorted Matrix42.4%Matrix42Medium

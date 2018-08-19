@@ -1,0 +1,17 @@
+solution.cpp: In member function 'int Solution::dfs(TreeNode*, int&, std::unordered_map<int, int>&)':
+solution.cpp:42:30: error: no matching function for call to 'Solution::dfs(TreeNode*&)'
+         int sum = dfs(n->left) + dfs(n->right) + n->val;
+                              ^
+solution.cpp:42:30: note: candidate is:
+solution.cpp:40:9: note: int Solution::dfs(TreeNode*, int&, std::unordered_map<int, int>&)
+     int dfs(TreeNode* n, int& numMaxCnt, unordered_map<int, int>& m) {
+         ^
+solution.cpp:40:9: note:   candidate expects 3 arguments, 1 provided
+solution.cpp:42:46: error: no matching function for call to 'Solution::dfs(TreeNode*&)'
+         int sum = dfs(n->left) + dfs(n->right) + n->val;
+                                              ^
+solution.cpp:42:46: note: candidate is:
+solution.cpp:40:9: note: int Solution::dfs(TreeNode*, int&, std::unordered_map<int, int>&)
+     int dfs(TreeNode* n, int& numMaxCnt, unordered_map<int, int>& m) {
+         ^
+solution.cpp:40:9: note:   candidate expects 3 arguments, 1 provided

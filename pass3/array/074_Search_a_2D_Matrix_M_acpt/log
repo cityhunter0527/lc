@@ -1,0 +1,43 @@
+solution.cpp: In function 'int main()':
+solution.cpp:48:46: error: no matching function for call to 'std::vector<std::vector<int> >::push_back(std::vector<int>*)'
+     matrix.push_back(new vector<int>{1,3,5,7});
+                                              ^
+solution.cpp:48:46: note: candidates are:
+In file included from /usr/include/c++/4.9/vector:64:0,
+                 from solution.cpp:21:
+/usr/include/c++/4.9/bits/stl_vector.h:913:7: note: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = std::vector<int>; _Alloc = std::allocator<std::vector<int> >; std::vector<_Tp, _Alloc>::value_type = std::vector<int>]
+       push_back(const value_type& __x)
+       ^
+/usr/include/c++/4.9/bits/stl_vector.h:913:7: note:   no known conversion for argument 1 from 'std::vector<int>*' to 'const value_type& {aka const std::vector<int>&}'
+/usr/include/c++/4.9/bits/stl_vector.h:931:7: note: void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = std::vector<int>; _Alloc = std::allocator<std::vector<int> >; std::vector<_Tp, _Alloc>::value_type = std::vector<int>]
+       push_back(value_type&& __x)
+       ^
+/usr/include/c++/4.9/bits/stl_vector.h:931:7: note:   no known conversion for argument 1 from 'std::vector<int>*' to 'std::vector<std::vector<int> >::value_type&& {aka std::vector<int>&&}'
+solution.cpp:49:50: error: no matching function for call to 'std::vector<std::vector<int> >::push_back(std::vector<int>*)'
+     matrix.push_back(new vector<int>{10,11,16,20});
+                                                  ^
+solution.cpp:49:50: note: candidates are:
+In file included from /usr/include/c++/4.9/vector:64:0,
+                 from solution.cpp:21:
+/usr/include/c++/4.9/bits/stl_vector.h:913:7: note: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = std::vector<int>; _Alloc = std::allocator<std::vector<int> >; std::vector<_Tp, _Alloc>::value_type = std::vector<int>]
+       push_back(const value_type& __x)
+       ^
+/usr/include/c++/4.9/bits/stl_vector.h:913:7: note:   no known conversion for argument 1 from 'std::vector<int>*' to 'const value_type& {aka const std::vector<int>&}'
+/usr/include/c++/4.9/bits/stl_vector.h:931:7: note: void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = std::vector<int>; _Alloc = std::allocator<std::vector<int> >; std::vector<_Tp, _Alloc>::value_type = std::vector<int>]
+       push_back(value_type&& __x)
+       ^
+/usr/include/c++/4.9/bits/stl_vector.h:931:7: note:   no known conversion for argument 1 from 'std::vector<int>*' to 'std::vector<std::vector<int> >::value_type&& {aka std::vector<int>&&}'
+solution.cpp:50:50: error: no matching function for call to 'std::vector<std::vector<int> >::push_back(std::vector<int>*)'
+     matrix.push_back(new vector<int>{23,30,34,50});
+                                                  ^
+solution.cpp:50:50: note: candidates are:
+In file included from /usr/include/c++/4.9/vector:64:0,
+                 from solution.cpp:21:
+/usr/include/c++/4.9/bits/stl_vector.h:913:7: note: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = std::vector<int>; _Alloc = std::allocator<std::vector<int> >; std::vector<_Tp, _Alloc>::value_type = std::vector<int>]
+       push_back(const value_type& __x)
+       ^
+/usr/include/c++/4.9/bits/stl_vector.h:913:7: note:   no known conversion for argument 1 from 'std::vector<int>*' to 'const value_type& {aka const std::vector<int>&}'
+/usr/include/c++/4.9/bits/stl_vector.h:931:7: note: void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = std::vector<int>; _Alloc = std::allocator<std::vector<int> >; std::vector<_Tp, _Alloc>::value_type = std::vector<int>]
+       push_back(value_type&& __x)
+       ^
+/usr/include/c++/4.9/bits/stl_vector.h:931:7: note:   no known conversion for argument 1 from 'std::vector<int>*' to 'std::vector<std::vector<int> >::value_type&& {aka std::vector<int>&&}'

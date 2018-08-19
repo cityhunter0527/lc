@@ -1,0 +1,134 @@
+In file included from /usr/include/c++/4.9/bits/hashtable.h:35:0,
+                 from /usr/include/c++/4.9/unordered_set:47,
+                 from solution.cpp:57:
+/usr/include/c++/4.9/bits/hashtable_policy.h: In instantiation of 'struct std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > >':
+/usr/include/c++/4.9/type_traits:134:12:   required from 'struct std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > >'
+/usr/include/c++/4.9/type_traits:145:38:   required from 'struct std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+/usr/include/c++/4.9/bits/unordered_set.h:95:63:   required from 'class std::unordered_set<std::pair<int, int> >'
+solution.cpp:79:37:   required from here
+/usr/include/c++/4.9/bits/hashtable_policy.h:85:33: error: no match for call to '(const std::hash<std::pair<int, int> >) (const std::pair<int, int>&)'
+  noexcept(declval<const _Hash&>()(declval<const _Key&>()))>
+                                 ^
+In file included from /usr/include/c++/4.9/bits/move.h:57:0,
+                 from /usr/include/c++/4.9/bits/stl_pair.h:59,
+                 from /usr/include/c++/4.9/bits/stl_algobase.h:64,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from solution.cpp:56:
+/usr/include/c++/4.9/type_traits: In instantiation of 'struct std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >':
+/usr/include/c++/4.9/bits/unordered_set.h:95:63:   required from 'class std::unordered_set<std::pair<int, int> >'
+solution.cpp:79:37:   required from here
+/usr/include/c++/4.9/type_traits:145:38: error: 'value' is not a member of 'std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > >'
+     : public integral_constant<bool, !_Pp::value>
+                                      ^
+In file included from /usr/include/c++/4.9/unordered_set:48:0,
+                 from solution.cpp:57:
+/usr/include/c++/4.9/bits/unordered_set.h: In instantiation of 'class std::unordered_set<std::pair<int, int> >':
+solution.cpp:79:37:   required from here
+/usr/include/c++/4.9/bits/unordered_set.h:95:63: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef __uset_hashtable<_Value, _Hash, _Pred, _Alloc>  _Hashtable;
+                                                               ^
+/usr/include/c++/4.9/bits/unordered_set.h:102:45: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::key_type key_type;
+                                             ^
+/usr/include/c++/4.9/bits/unordered_set.h:103:47: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::value_type value_type;
+                                               ^
+/usr/include/c++/4.9/bits/unordered_set.h:104:43: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::hasher hasher;
+                                           ^
+/usr/include/c++/4.9/bits/unordered_set.h:105:46: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::key_equal key_equal;
+                                              ^
+/usr/include/c++/4.9/bits/unordered_set.h:106:51: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::allocator_type allocator_type;
+                                                   ^
+/usr/include/c++/4.9/bits/unordered_set.h:111:45: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::pointer  pointer;
+                                             ^
+/usr/include/c++/4.9/bits/unordered_set.h:112:50: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::const_pointer const_pointer;
+                                                  ^
+/usr/include/c++/4.9/bits/unordered_set.h:113:47: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::reference  reference;
+                                               ^
+/usr/include/c++/4.9/bits/unordered_set.h:114:52: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::const_reference const_reference;
+                                                    ^
+/usr/include/c++/4.9/bits/unordered_set.h:115:46: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::iterator  iterator;
+                                              ^
+/usr/include/c++/4.9/bits/unordered_set.h:116:51: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::const_iterator const_iterator;
+                                                   ^
+/usr/include/c++/4.9/bits/unordered_set.h:117:51: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::local_iterator local_iterator;
+                                                   ^
+/usr/include/c++/4.9/bits/unordered_set.h:118:57: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::const_local_iterator const_local_iterator;
+                                                         ^
+/usr/include/c++/4.9/bits/unordered_set.h:119:47: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::size_type  size_type;
+                                               ^
+/usr/include/c++/4.9/bits/unordered_set.h:120:52: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       typedef typename _Hashtable::difference_type difference_type;
+                                                    ^
+/usr/include/c++/4.9/bits/unordered_set.h:235:7: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       operator=(initializer_list<value_type> __l)
+       ^
+/usr/include/c++/4.9/bits/unordered_set.h:329:2: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+  emplace(_Args&&... __args)
+  ^
+/usr/include/c++/4.9/bits/unordered_set.h:373:7: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       insert(const value_type& __x)
+       ^
+/usr/include/c++/4.9/bits/unordered_set.h:377:7: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       insert(value_type&& __x)
+       ^
+/usr/include/c++/4.9/bits/unordered_set.h:432:7: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       insert(initializer_list<value_type> __l)
+       ^
+/usr/include/c++/4.9/bits/unordered_set.h:577:7: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       equal_range(const key_type& __x)
+       ^
+/usr/include/c++/4.9/bits/unordered_set.h:581:7: error: 'value' is not a member of 'std::__not_<std::__and_<std::__is_fast_hash<std::hash<std::pair<int, int> > >, std::__detail::__is_noexcept_hash<std::pair<int, int>, std::hash<std::pair<int, int> > > > >'
+       equal_range(const key_type& __x) const
+       ^
+solution.cpp: In constructor 'TicTacToe::TicTacToe(int)':
+solution.cpp:62:22: error: no matching function for call to 'std::unordered_set<std::pair<int, int> >::unordered_set()'
+     TicTacToe(int n) {
+                      ^
+solution.cpp:62:22: note: candidates are:
+In file included from /usr/include/c++/4.9/unordered_set:48:0,
+                 from solution.cpp:57:
+/usr/include/c++/4.9/bits/unordered_set.h:165:7: note: std::unordered_set<_Value, _Hash, _Pred, _Alloc>::unordered_set(std::unordered_set<_Value, _Hash, _Pred, _Alloc>&&) [with _Value = std::pair<int, int>; _Hash = std::hash<std::pair<int, int> >; _Pred = std::equal_to<std::pair<int, int> >; _Alloc = std::allocator<std::pair<int, int> >]
+       unordered_set(unordered_set&&) = default;
+       ^
+/usr/include/c++/4.9/bits/unordered_set.h:165:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/4.9/bits/unordered_set.h:162:7: note: std::unordered_set<_Value, _Hash, _Pred, _Alloc>::unordered_set(const std::unordered_set<_Value, _Hash, _Pred, _Alloc>&) [with _Value = std::pair<int, int>; _Hash = std::hash<std::pair<int, int> >; _Pred = std::equal_to<std::pair<int, int> >; _Alloc = std::allocator<std::pair<int, int> >]
+       unordered_set(const unordered_set&) = default;
+       ^
+/usr/include/c++/4.9/bits/unordered_set.h:162:7: note:   candidate expects 1 argument, 0 provided
+solution.cpp: In member function 'int TicTacToe::move(int, int, int)':
+solution.cpp:75:42: error: no matching function for call to 'std::unordered_set<std::pair<int, int> >::insert(std::pair<int, int>)'
+          board.insert(make_pair(row, col));
+                                          ^
+solution.cpp:75:42: note: candidate is:
+In file included from /usr/include/c++/4.9/unordered_set:48:0,
+                 from solution.cpp:57:
+/usr/include/c++/4.9/bits/unordered_set.h:421:2: note: template<class _InputIterator> void std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(_InputIterator, _InputIterator) [with _InputIterator = _InputIterator; _Value = std::pair<int, int>; _Hash = std::hash<std::pair<int, int> >; _Pred = std::equal_to<std::pair<int, int> >; _Alloc = std::allocator<std::pair<int, int> >]
+  insert(_InputIterator __first, _InputIterator __last)
+  ^
+/usr/include/c++/4.9/bits/unordered_set.h:421:2: note:   template argument deduction/substitution failed:
+solution.cpp:75:42: note:   candidate expects 2 arguments, 1 provided
+          board.insert(make_pair(row, col));
+                                          ^
+solution.cpp: In function 'int main()':
+solution.cpp:89:34: error: invalid conversion from 'TicTacToe*' to 'int' [-fpermissive]
+     TicTacToe s = new TicTacToe(3);
+                                  ^
+solution.cpp:62:5: note: initializing argument 1 of 'TicTacToe::TicTacToe(int)'
+     TicTacToe(int n) {
+     ^

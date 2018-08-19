@@ -1,0 +1,111 @@
+grid:          find: 
+A B C         ABCDEA
+F E D
+G A I
+
+Create array find_dist store the position in grid of each character in find.
+find_dist[A] = {[0][0],[2][1]}
+find_dist[B] = {[0][1]}
+find_dist[C] = {[0][2]}
+find_dist[D] = {[1][2]}
+find_dist[E] = {[1][1]}
+
+Start from the first letter of find, access each possible position of A,
+then each possible position of B, C,... with the limit of the rules:
+1. The next letter could only be on UP, DONW, LEFT, RIGHT or diagonally from 
+   one letter to the next.
+2. Should not stay on the same cell twice in a row.
+
+Problem Statement
+You are given a String[] grid representing a rectangular grid of letters. 
+You are also given a String find, a word you are to find within the grid. 
+The starting point may be anywhere in the grid. The path may move up, down, 
+left, right, or diagonally from one letter to the next, and may use letters 
+in the grid more than once, but you may not stay on the same cell twice in a 
+row (see example 6 for clarification).
+
+You are to return an int indicating the number of ways find can be found within 
+the grid. If the result is more than 1,000,000,000, return -1.
+
+Definition
+Class:
+WordPath
+Method:
+countPaths
+Parameters:
+String[], String
+Returns:
+int
+Method signature:
+int countPaths(String[] grid, String find)
+(be sure your method is public)
+
+
+Constraints
+- grid will contain between 1 and 50 elements, inclusive.
+- Each element of grid will contain between 1 and 50 uppercase ('A'-'Z') letters, inclusive.
+- Each element of grid will contain the same number of characters.
+- find will contain between 1 and 50 uppercase ('A'-'Z') letters, inclusive.
+Examples
+
+0)
+{"ABC",
+"FED",
+"GHI"}
+"ABCDEFGHI"
+Returns: 1
+There is only one way to trace this path. Each letter is used exactly once.
+
+1)
+{"ABC",
+"FED",
+"GAI"}
+"ABCDEA"
+Returns: 2
+Once we get to the 'E', we can choose one of two directions for the final 'A'.
+
+2)
+{"ABC",
+"DEF",
+"GHI"}
+"ABCD"
+Returns: 0
+We can trace a path for "ABC", but there's no way to complete a path to the letter 'D'.
+
+3)
+{"AA",
+"AA"}
+"AAAA"
+Returns: 108
+We can start from any of the four locations. From each location, we can then move in any of the three possible directions for our second letter, and again for the third and fourth letter. 4 * 3 * 3 * 3 = 108.
+
+4)
+{"ABABA",
+"BABAB",
+"ABABA",
+"BABAB",
+"ABABA"}
+"ABABABBA"
+Returns: 56448
+There are a lot of ways to trace this path.
+
+5)
+{"AAAAA",
+"AAAAA",
+"AAAAA",
+"AAAAA",
+"AAAAA"}
+"AAAAAAAAAAA"
+Returns: -1
+There are well over 1,000,000,000 paths that can be traced.
+
+6)
+{"AB",
+"CD"}
+"AA"
+Returns: 0
+Since we can't stay on the same cell, we can't trace the path at all.
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved
+
+
+

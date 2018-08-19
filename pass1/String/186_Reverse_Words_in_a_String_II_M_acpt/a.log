@@ -1,0 +1,38 @@
+solution.cpp: In member function 'void Solution::reverseWords(std::string&)':
+solution.cpp:30:31: error: no matching function for call to 'std::basic_string<char>::push_back(std::string&, char)'
+             s.push_back(s, ' ');
+                               ^
+solution.cpp:30:31: note: candidate is:
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from solution.cpp:16:
+/usr/include/c++/4.9/bits/basic_string.h:1069:7: note: void std::basic_string<_CharT, _Traits, _Alloc>::push_back(_CharT) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]
+       push_back(_CharT __c)
+       ^
+/usr/include/c++/4.9/bits/basic_string.h:1069:7: note:   candidate expects 1 argument, 2 provided
+solution.cpp:32:31: error: no matching function for call to 'std::basic_string<char>::push_back(std::string&, char)'
+             s.push_back(s, ' ');
+                               ^
+solution.cpp:32:31: note: candidate is:
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from solution.cpp:16:
+/usr/include/c++/4.9/bits/basic_string.h:1069:7: note: void std::basic_string<_CharT, _Traits, _Alloc>::push_back(_CharT) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]
+       push_back(_CharT __c)
+       ^
+/usr/include/c++/4.9/bits/basic_string.h:1069:7: note:   candidate expects 1 argument, 2 provided
+solution.cpp: In function 'int main()':
+solution.cpp:42:5: error: 'sting' was not declared in this scope
+     sting s = "the sky is blue";
+     ^
+solution.cpp:44:29: error: 's' was not declared in this scope
+     mysolution.reverseWords(s);
+                             ^

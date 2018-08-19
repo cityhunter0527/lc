@@ -1,0 +1,4 @@
+solution.cpp: In member function 'int Solution::guessNumber(int)':
+solution.cpp:40:24: error: expected primary-expression before ')' token
+             } else if () {
+                        ^

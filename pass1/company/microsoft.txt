@@ -1,0 +1,87 @@
+ Microsoft
+  Show problem tags
+#
+  Title
+  Acceptance
+  Difficulty
+  Frequency
+  206 Reverse Linked List42.4%List42Easy
+  1 Two Sum27.8%Sum27Easy
+  151 Reverse Words in a String15.7%String15Medium
+  138 Copy List with Random Pointer26.2%Pointer26Hard
+  8 String to Integer (atoi)atoi13.8%atoi13Easy
+  88 Merge Sorted Array31.0%Array31Easy
+  2  Add Two Numbers25.4%Numbers25Medium
+  54 Spiral Matrix24.0%Matrix24Medium
+  235 Lowest Common Ancestor of a Binary Search Tree37.8%Tree37Easy
+  171 Excel Sheet Column Numbers25Medium44.4%Numbers25Medium44Easy
+  75 Sort Colors36.1%Colors36Medium
+  98 Validate Binary Search Tree37Easy21.9%Tree37Easy21Medium
+  21 Merge Two Sorted Lists37.3%Lists37Easy
+  206 ReverseAddValid Parentheses31.3%Parentheses31Easy
+  141 Linked List Cycle36.1%Cycle36Easy
+  48 Rotate Image36.4%Image36Medium
+  146 LRU Cache15.8%Cache15Hard
+  53 Maximum Subarray38.1%Subarray38Medium
+  236 Lowest Common Ancestor of a Binary Tree37Easy21Medium29.2%Tree37Easy21Medium29Medium
+  200 Number of Islands30.9%Islands30Medium
+  116 Populating Next Right Pointers in Each Node36.7%Node36Medium
+  4   Median of Two Sorted Arrays20.2%Arrays20Hard
+  103 Binary Tree Zigzag Level Order Traversal31.1%Traversal31Medium
+  168 Excel Sheet Column Title23.7%Title23Easy
+  26 Remove Duplicates from Sorted Arrays20Hard34.9%Arrays20Hard34Easy
+  121 Best Time to Buy and Sell Stock38.2%Stock38Easy
+  33 Search in Rotated Sorted Arrays20Hard34Easy31.4%Arrays20Hard34Easy31Hard
+  237 Delete Node in a Linked List44.9%List44Easy
+  273 Integer to English Words20.5%Words20Hard
+  73 Set Matrix Zeroes34.7%Zeroes34Medium
+  117 Populating Next Right Pointers in Each Node II33.2%II33Hard
+  102 Binary Tree Level Order Traversal31Medium35.7%Traversal31Medium35Easy
+  268 Missing Numbers25Medium44Easy42.6%Numbers25Medium44Easy42Medium
+  24 Swap Nodes in Pairs36.7%Pairs36Easy
+  151 Reverse3Sum20.3%151Reverse3Sum20Medium
+  53 MaximumLongest Palindromic Substring24.0%Substring24Medium
+  191 Number of 1 Bits38.1%Bits38Easy
+  238 Product of Array Except Self45.8%Self45Medium
+  138 CopyRoman to Integer42.5%Integer42Easy
+  218 The Skyline problem24.6%problem24Hard
+  153 Find Minimum in Rotated Sorted Array38.0%Array38Medium
+  215 Kth Largest Element in an Array38Medium36.3%Array38Medium36Medium
+  160 Intersection of Two Linked Lists37Easy30.4%Lists37Easy30Easy
+  189 Rotate Array38Medium36Medium22.9%Array38Medium36Medium22Easy
+  208 Implement Trie (Prefix Tree)Tree25.6%Tree25Medium
+  204 Count Primes25.7%Primes25Easy
+  297 Serialize and Deserialize Binary Tree25Medium30.4%Tree25Medium30Hard
+  212 Word Search II33Hard21.5%II33Hard21Hard
+  186 Reverse Words in a String II   28.9%28Medium
+  174 Dungeon Game22.4%Game22Hard
+  238 ProductMerge k Sorted Lists37Easy30Easy25.2%Lists37Easy30Easy25Hard
+  232 Implement Queue using Stacks34.7%Stacks34Easy
+  79 Word Search24.7%Search24Medium
+  71 Simplify Path23.5%Path23Medium
+  173 Binary Search Tree Iterator37.7%Iterator37Medium
+  125 Valid Palindrome24.9%Palindrome24Easy
+  106 Construct Binary Tree from Inorder and Postorder Traversal31Medium35Easy30.5%Traversal31Medium35Easy30Medium
+  258 Add Digits49.8%Digits49Easy
+  348 Design Tic-Tac-Toe     44.7%44Medium
+  258 AddReverse Nodes in k-Group29.1%Group29Hard
+  101 Symmetric Tree36.1%Tree36Easy
+  165 Compare Version Numbers25Medium44Easy42Medium18.8%Numbers25Medium44Easy42Medium18Easy
+  94 Binary Tree Inorder Traversal31Medium35Easy30Medium42.5%Traversal31Medium35Easy30Medium42Medium
+  91 Decode Ways18.4%Ways18Medium
+  419 Battleships in a Board57.7%Board57Medium
+  46 Permutations39.0%46Permutations39Medium
+  162 Find Peak Element35.0%Element35Medium
+  28 MediumImplement strStr()strStr26.4%strStr26Easy
+  112 Path Sum27Easy32.4%Sum27Easy32Easy
+  285 Inorder Successor in BST   36.3%36Medium
+  124 Binary Tree Maximum Path Sum27Easy32Easy24.5%Sum27Easy32Easy24Hard
+  56 Merge Intervals27.5%Intervals27Hard
+  270 Closest Binary Search Tree Value   36.8%36Easy
+  47 Permutations II30.1%II30Medium
+  300 Longest Increasing Subsequence36.6%Subsequence36Medium
+  365 Water and Jug problem24Hard25.3%problem24Hard25Medium
+  114 Flatten Binary Tree to Linked Lists37Easy30Easy25Hard32.9%Lists37Easy30Easy25Hard32Medium
+  55 Jump Game22Hard29.0%Game22Hard29Medium
+  213 House Robber II30Medium32.5%II30Medium32Medium
+  333 Largest BST Subtree    29.0%29Medium

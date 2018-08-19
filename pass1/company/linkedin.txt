@@ -1,0 +1,49 @@
+
+#
+Title
+Acceptance
+Difficulty
+Frequency
+339 Nested List Weight Sum   58.8%58Easy
+244 Shortest Word Distance II    34.9%34Medium
+364 Nested List Weight Sum II    49.0%49Medium
+156 Binary Tree Upside Down  41.3%41Medium
+256 Paint House  45.2%45Medium
+243 Shortest Word Distance   49.7%49Easy
+170 Two Sum III - Data structure design  22.6%22Easy
+254 Factor Combinations  39.0%39Medium
+245 Shortest Word Distance III   48.5%48Medium
+311 Sparse Matrix Multiplication     49.6%49Medium
+205 Isomorphic Strings31.8%Strings31Easy
+297 Serialize and Deserialize Binary Tree30.5%Tree30Hard
+53 Maximum Subarray38.2%Subarray38Medium
+68 Text Justification17.5%Justification17Hard
+277 Find the Celebrity   35.5%35Medium
+56 Merge Intervals27.6%Intervals27Hard
+65 Valid Number12.5%Number12Hard
+50 Pow(x, n)50Pow27.2%50Pow27Medium
+366Find Leaves of Binary Tree   55.9%55Medium
+187Repeated DNA Sequences28.6%Sequences28Medium
+149Max Points on a Line15.2%Line15Hard
+34MediumSearch for a Range30.5%Range30Medium
+102Binary Tree Level Order Traversal35.9%Traversal35Easy
+236Lowest Common Ancestor of a Binary Tree29.2%Tree29Medium
+339NestedSearch in Rotated Sorted Array31.5%Array31Hard
+238Product of Array Except Self45.9%Self45Medium
+152Maximum Product Subarray38Medium23.9%Subarray38Medium23Medium
+152MaximumTwo Sum28.1%Sum28Easy
+150Evaluate Reverse Polish Notation25.3%Notation25Medium
+101Symmetric Tree29Medium36.2%Tree29Medium36Easy
+76Minimum Window Substring23.0%Substring23Hard
+104Maximum Depth of Binary Tree29Medium36Easy50.1%Tree29Medium36Easy50Easy
+198House Robber36.8%Robber36Easy
+127Word Ladder19.3%Ladder19Medium
+46Permutations39.2%46Permutations39Medium
+103Binary Tree Zigzag Level Order Traversal35Easy31.3%Traversal35Easy31Medium
+57Insert Intervals27Hard25.6%Intervals27Hard25Hard
+238ProductMerge k Sorted Lists25.3%Lists25Hard
+21Merge Two Sorted Lists25Hard37.4%Lists25Hard37Easy
+173Binary Search Tree Iterator37.9%Iterator37Medium
+367Valid Perfect Square36.8%Square36Medium
+47Permutations III30.2%III30Medium
+

@@ -1,0 +1,51 @@
+
+#
+Title
+Acceptance
+Difficulty
+Frequency
+432All O`one Data Structure23.9%Structure23Hard
+380Insert Delete GetRandom O(1)GetRandom36.5%GetRandom36Hard
+262Trips and Users15.7%Users15Hard
+297Serialize and Deserialize Binary Tree30.5%Tree30Hard
+291Word Pattern II  36.9%36Hard
+254Factor Combinations  39.0%39Medium
+146LRU Cache15.9%Cache15Hard
+36HardValid Sudoku33.1%Sudoku33Easy
+139Word Break27.4%Break27Medium
+186Reverse Words in a String II     28.8%28Medium
+249Group Shifted Strings    36.7%36Easy
+54Spiral Matrix24.1%Matrix24Medium
+290Word Pattern31.5%Pattern31Easy
+10Regular Expression Matching23.2%Matching23Hard
+17Letter Combinations of a Phone Number31.5%Number31Medium
+49Group Anagrams30.8%Anagrams30Medium
+139WordRoman to Integer42.6%Integer42Easy
+208Implement Trie (Prefix Tree)Tree25.6%Tree25Medium
+138Copy List with Random Pointer26.3%Pointer26Hard
+230Kth Smallest Element in a BST41.1%BST41Medium
+133Clone Graph24.9%Graph24Medium
+22Generate Parentheses40.7%Parentheses40Medium
+39MediumCombination Sum34.6%Sum34Medium
+91Decode Ways18.5%Ways18Medium
+37Sudoku Solver27.3%Solver27Hard
+249GroupSwap Nodes in Pairs36.8%Pairs36Easy
+202Happy Number31Medium38.6%Number31Medium38Easy
+242Valid Anagrams30Medium44.2%Anagrams30Medium44Easy
+230KthMerge k Sorted Lists25.3%Lists25Hard
+76Minimum Window Substring23.1%Substring23Hard
+133CloneTwo Sum34Medium28.1%Sum34Medium28Easy
+206Reverse Linked Lists25Hard42.6%Lists25Hard42Easy
+140Word Break II21.5%II21Hard
+33Search in Rotated Sorted Array31.5%Array31Hard
+125Valid Palindrome25.0%Palindrome25Easy
+373Find K Pairs with Smallest Sums28.8%Sums28Medium
+337House Robber III40.7%III40Medium
+78Subsets35.3%78Subsets35Medium
+161One Edit Distance    29.9%29Medium
+155Min Stack25.3%Stack25Easy
+266Palindrome Permutation   54.0%54Easy
+121Best Time to Buy and Sell Stock38.3%Stock38Easy
+171Excel Sheet Column Number31Medium38Easy44.6%Number31Medium38Easy44Easy
+8String to Integer (atoi)atoi13.8%atoi13Easy
+104Maximum Depth of Binary Tree25Medium50.1%Tree25Medium50Easy

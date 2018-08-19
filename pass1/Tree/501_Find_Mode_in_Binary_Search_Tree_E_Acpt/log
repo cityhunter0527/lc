@@ -1,0 +1,33 @@
+solution.cpp: In member function 'void Solution::dfs(TreeNode*, int&, int&, int&, std::vector<int>&)':
+solution.cpp:42:20: error: invalid use of member function (did you forget the '()' ?)
+         if (dfs == nullptr) return;
+                    ^
+solution.cpp:43:22: error: 'curvVal' was not declared in this scope
+         dfs(n->left, curvVal, maxCnt, curCnt, res);
+                      ^
+solution.cpp:43:39: error: 'curCnt' was not declared in this scope
+         dfs(n->left, curvVal, maxCnt, curCnt, res);
+                                       ^
+solution.cpp:45:23: error: 'curVal' was not declared in this scope
+         if (n->val == curVal) 
+                       ^
+solution.cpp:54:27: error: 'curVal' was not declared in this scope
+             res.push_back(curVal);
+                           ^
+solution.cpp:56:27: error: 'curVal' was not declared in this scope
+             res.push_back(curVal);
+                           ^
+solution.cpp: In member function 'std::vector<int> Solution::findMode(TreeNode*)':
+solution.cpp:66:23: error: 'INT_MAX' was not declared in this scope
+         int prevVal = INT_MAX, maxCnt = 0, tmpCnt = 0;
+                       ^
+solution.cpp:67:19: error: 'maxCnt' was not declared in this scope
+         dfs(root, maxCnt, tmpCnt, res);
+                   ^
+solution.cpp:67:27: error: 'tmpCnt' was not declared in this scope
+         dfs(root, maxCnt, tmpCnt, res);
+                           ^
+solution.cpp: In function 'int main()':
+solution.cpp:81:5: error: expected ';' before '}' token
+     }
+     ^

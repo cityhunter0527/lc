@@ -1,0 +1,42 @@
+solution.cpp: In member function 'bool Solution::helper(TreeNode*, TreeNode*, TreeNode*, TreeNode&)':
+solution.cpp:37:17: error: invalid user-defined conversion from 'TreeNode*' to 'TreeNode&&' [-fpermissive]
+             res = root;
+                 ^
+solution.cpp:27:5: note: candidate is: TreeNode::TreeNode(int) <near match>
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     ^
+solution.cpp:27:5: note:   no known conversion for argument 1 from 'TreeNode*' to 'int'
+solution.cpp:37:17: error: invalid conversion from 'TreeNode*' to 'int' [-fpermissive]
+             res = root;
+                 ^
+solution.cpp:27:5: note: initializing argument 1 of 'TreeNode::TreeNode(int)'
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     ^
+solution.cpp:37:17: error: conversion to non-const reference type 'struct TreeNode&&' from rvalue of type 'TreeNode' [-fpermissive]
+             res = root;
+                 ^
+solution.cpp:40:17: error: invalid user-defined conversion from 'TreeNode*' to 'TreeNode&&' [-fpermissive]
+             res = root;
+                 ^
+solution.cpp:27:5: note: candidate is: TreeNode::TreeNode(int) <near match>
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     ^
+solution.cpp:27:5: note:   no known conversion for argument 1 from 'TreeNode*' to 'int'
+solution.cpp:40:17: error: invalid conversion from 'TreeNode*' to 'int' [-fpermissive]
+             res = root;
+                 ^
+solution.cpp:27:5: note: initializing argument 1 of 'TreeNode::TreeNode(int)'
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     ^
+solution.cpp:40:17: error: conversion to non-const reference type 'struct TreeNode&&' from rvalue of type 'TreeNode' [-fpermissive]
+             res = root;
+                 ^
+solution.cpp: In member function 'TreeNode* Solution::lowestCommonAncestor(TreeNode*, TreeNode*, TreeNode*)':
+solution.cpp:49:31: error: no matching function for call to 'Solution::helper(TreeNode*&, TreeNode*&, TreeNode*&, TreeNode*&)'
+         helper(root, p, q, res);
+                               ^
+solution.cpp:49:31: note: candidate is:
+solution.cpp:32:10: note: bool Solution::helper(TreeNode*, TreeNode*, TreeNode*, TreeNode&)
+     bool helper(TreeNode* root, TreeNode* p, TreeNode* q, TreeNode& res){
+          ^
+solution.cpp:32:10: note:   no known conversion for argument 4 from 'TreeNode*' to 'TreeNode&'

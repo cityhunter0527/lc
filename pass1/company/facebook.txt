@@ -1,0 +1,92 @@
+
+#
+Title
+Acceptance
+Difficulty
+Frequency
+283Move Zeroes46.9%Zeroes46Easy
+311Sparse Matrix Multiplication     49.5%49Medium
+301Remove Invalid Parentheses34.1%Parentheses34Hard
+314Binary Tree Vertical Order Traversal     33.9%33Medium
+325Maximum Size Subarray Sum Equals k   41.5%41Medium
+67Add Binary29.7%Binary29Easy
+273Integer to English Words20.6%Words20Hard
+278First Bad Version23.9%Version23Easy
+10Regular Expression Matching23.2%Matching23Hard
+91Decode Ways18.5%Ways18Medium
+17Letter Combinations of a Phone Number31.5%Number31Medium
+153Sum20.4%153Sum20Medium
+158Read N Characters Given Read4 II - Call multiple times   24.3%24Hard
+253Meeting Rooms II     37.6%37Medium
+285Inorder Successor in BST     36.3%36Medium
+277Find the Celebrity   35.4%35Medium
+157Read N Characters Given Read4    29.4%29Easy
+161One Edit Distance    29.9%29Medium
+297Serialize and Deserialize Binary Tree30.5%Tree30Hard
+23Merge k Sorted Lists25.3%Lists25Hard
+282Expression Add Operators27.6%Operators27Hard
+76Minimum Window Substring23.1%Substring23Hard
+200Number of Islands31.1%Islands31Medium
+56Merge Intervals27.6%Intervals27Hard
+173Binary Search Tree Iterator37.9%Iterator37Medium
+257Binary Tree Paths33.3%Paths33Easy
+139Word Break27.4%Break27Medium
+139WordTwo Sum28.1%Sum28Easy
+121Best Time to Buy and Sell Stock38.3%Stock38Easy
+218The Skyline Problem24.8%Problem24Hard
+75Sort Colors36.2%Colors36Medium
+341Flatten Nested List Iterator37Medium36.7%Iterator37Medium36Medium
+252Meeting Rooms    44.4%44Easy
+211Add and Search Word - Data structure design20.1%design20Medium
+206Reverse Linked List42.6%List42Easy
+98Validate Binary Search Tree22.0%Tree22Medium
+43Multiply Strings25.4%Strings25Medium
+78Subsets35.3%78Subsets35Medium
+133Clone Graph24.9%Graph24Medium
+236Lowest Common Ancestor of a Binary Tree22Medium29.2%Tree22Medium29Medium
+49MediumGroup Anagrams30.8%Anagrams30Medium
+125Valid Palindrome25.0%Palindrome25Easy
+238Product of Array Except Self46.0%Self46Medium
+209Minimum Size Subarray Sum28Easy28.1%Sum28Easy28Medium
+38Count and Say31.7%Say31Easy
+57Insert Intervals27Hard25.6%Intervals27Hard25Hard
+79Word Search24.8%Search24Medium
+133CloneRoman to Integer42.6%Integer42Easy
+71Simplify Paths33Easy23.5%Paths33Easy23Medium
+377Combination Sum IV40.8%IV40Medium
+90Subsets II33.0%II33Medium
+128Longest Consecutive Sequence34.5%Sequence34Hard
+44EasyWildcard Matching23Hard18.6%Matching23Hard18Hard
+282ExpressionImplement strStr()strStr26.5%strStr26Easy
+208Implement Trie (Prefix Tree)Tree25.6%Tree25Medium
+146LRU Cache15.9%Cache15Hard
+215Kth Largest Element in an Array36.5%Array36Medium
+127Word Ladder19.3%Ladder19Medium
+334Increasing Triplet Subsequence37.0%Subsequence37Medium
+334IncreasingSearch in Rotated Sorted Array36Medium31.5%Array36Medium31Hard
+286Walls and Gates  40.9%40Medium
+88Merge Sorted Array36Medium31Hard31.1%Array36Medium31Hard31Easy
+208ImplementValid Parentheses34Hard31.4%Parentheses34Hard31Easy
+235Lowest Common Ancestor of a Binary Search Tree25Medium37.8%Tree25Medium37Easy
+69Sqrt(x)69Sqrt26.5%69Sqrt26Medium
+102Binary Tree Level Order Traversal35.9%Traversal35Easy
+50Pow(x, n)50Pow27.2%50Pow27Medium
+68Text Justification17.5%Justification17Hard
+221Maximal Square26.2%Square26Medium
+274H-Index31.5%Index31Medium
+210Course Schedule II33Medium24.3%II33Medium24Medium
+85Maximal Rectangle25.3%Rectangle25Hard
+117Populating Next Right Pointers in Each Node II33Medium24Medium33.2%II33Medium24Medium33Hard
+234Palindrome Linked List42Easy30.9%List42Easy30Easy
+252MeetingReverse Nodes in k-Group29.2%Group29Hard
+404Sum of Left Leaves45.6%Leaves45Easy
+168Excel Sheet Column Title23.8%Title23Easy
+26Remove Duplicates from Sorted Array36Medium31Hard31Easy34.9%Array36Medium31Hard31Easy34Easy
+275H-Index II33Medium24Medium33Hard33.3%II33Medium24Medium33Hard33Medium
+269Alien Dictionary     23.4%23Hard
+265Paint House II   36.7%36Hard
+80Remove Duplicates from Sorted Array II34.4%II34Medium
+380Insert Delete GetRandom O(1)GetRandom36.5%GetRandom36Hard
+261Graph Valid Tree     35.5%35Medium
+398Random Pick Index36.7%Index36Medium
+410Split Array Largest Sum28.6%Sum28Hard

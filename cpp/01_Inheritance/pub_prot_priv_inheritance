@@ -1,0 +1,68 @@
+1. Private inheritance does not model an is-a relationship in the same way that public inheritance does. 
+2. Private inheritance refers to the idea of being "implemented in terms of a".
+3. The key difference is all the public functions of parent class could only be used to implement the 
+child class (be called by member function of child class) but they are not allowed to be accessed by
+the outside world.
+
+This means the outside world could not convert parent pointer to child pointer.
+
+class A {
+public:
+  A () {}
+  ~A () {}
+  void f() {}  
+
+private:
+  f1 () {}
+  int aaa;
+};
+
+class B : private A { // B is implemented in terms of A.
+public: 
+   B () {}
+   ~B () {}
+   void g() { f();     // This is allowed as member function of B is allowed to access 
+                       // public function of A although A is privated inherited by B. 
+              f1();    // Not allowed because f1 if private member of A.
+              bbb = 1; // Allowed.
+              aaa = 1; // Not allowed because aaa is private member of A.      
+            }
+private:
+   int bbb;
+};
+
+B *pb = new A; // Not allowed, because the outside world is not allowed to call the contructor of A as 
+               // A's contructor is now private.
+
+
+4. Compared to composition mode, simple composition mode means "has-a" relationship between the parent
+class and the child class.
+
+
+5 What are the access rules with private and protected inheritance?
+Take these classes as examples:
+
+ class B                    { /*...*/ };
+ class D_priv : private   B { /*...*/ };
+ class D_prot : protected B { /*...*/ };
+ class D_publ : public    B { /*...*/ };
+ class UserClass            { B b; /*...*/ };
+
+None of the derived classes can access anything that is private in B. 
+In D_priv, the public and protected parts of B are private. // Meaning derived class of D_priv could NOT access public and 
+                                                            // protected parts of B becauses they've become private parts in D_priv.
+                                                            
+In D_prot, the public and protected parts of B are protected. // Meaning derived class of D_prot could also access public and
+                                                            // protected parts of B since they've become protected parts of D_prot.
+                                                             
+In D_publ, the public parts of B are public and the protected parts of B are protected (D_publ is-a-kind-of-a B). 
+class UserClass can access only the public parts of B, which "seals off" UserClass from B.
+
+ * Difference between protected and private inheritance:
+ *  1. protected:
+ *     public and protected becomes protected in derived class.
+ *     base class's public and protected mem fun could still be passed down(called) to derived class's derived class (since they are protected).
+ *  2. private
+ *     public and protected becomes private in derived class.
+ *     base class's public and protected mem fun could NOT be passed down(called) to derived class's derived class (since they are private).
+ *

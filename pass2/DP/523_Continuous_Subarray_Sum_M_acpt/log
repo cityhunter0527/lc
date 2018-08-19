@@ -1,0 +1,9 @@
+solution.cpp: In function 'int main()':
+solution.cpp:44:58: error: no matching function for call to 'Solution::checkSubarraySum(std::vector<int>, int)'
+     cout << s.checkSubarraySum(vector<int>{23,2,4,6,7}, 6) << endl;
+                                                          ^
+solution.cpp:44:58: note: candidate is:
+solution.cpp:30:10: note: bool Solution::checkSubarraySum(std::vector<int>&, int)
+     bool checkSubarraySum(vector<int>& nums, int k) {
+          ^
+solution.cpp:30:10: note:   no known conversion for argument 1 from 'std::vector<int>' to 'std::vector<int>&'

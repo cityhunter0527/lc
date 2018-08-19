@@ -1,0 +1,6 @@
+In file included from ../main.cpp:7:0:
+../StringDetector.hpp: In constructor 'StringDetector::StringDetector()':
+../StringDetector.hpp:11:24: error: expected identifier before '{' token
+     StringDetector() : {}
+                        ^
+make: *** [main.o] Error 1

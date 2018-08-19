@@ -1,0 +1,70 @@
+../LinkedList01.cpp: In member function 'ListNode* Solution::addTwoNumbers(ListNode*, ListNode*)':
+../LinkedList01.cpp:80:17: error: 'begin' was not declared in this scope
+     for (auto x:l1) num1.push_back(x);
+                 ^
+../LinkedList01.cpp:80:17: note: suggested alternatives:
+In file included from /usr/include/c++/4.9/bits/basic_string.h:42:0,
+                 from /usr/include/c++/4.9/string:52,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../LinkedList.hpp:4,
+                 from ../LinkedList01.cpp:1:
+/usr/include/c++/4.9/initializer_list:89:5: note:   'std::begin'
+     begin(initializer_list<_Tp> __ils) noexcept
+     ^
+/usr/include/c++/4.9/initializer_list:89:5: note:   'std::begin'
+../LinkedList01.cpp:80:17: error: 'end' was not declared in this scope
+     for (auto x:l1) num1.push_back(x);
+                 ^
+../LinkedList01.cpp:80:17: note: suggested alternatives:
+In file included from /usr/include/c++/4.9/bits/basic_string.h:42:0,
+                 from /usr/include/c++/4.9/string:52,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../LinkedList.hpp:4,
+                 from ../LinkedList01.cpp:1:
+/usr/include/c++/4.9/initializer_list:99:5: note:   'std::end'
+     end(initializer_list<_Tp> __ils) noexcept
+     ^
+/usr/include/c++/4.9/initializer_list:99:5: note:   'std::end'
+../LinkedList01.cpp:81:17: error: 'begin' was not declared in this scope
+     for (auto x:l2) num2.push_back(x);
+                 ^
+../LinkedList01.cpp:81:17: note: suggested alternatives:
+In file included from /usr/include/c++/4.9/bits/basic_string.h:42:0,
+                 from /usr/include/c++/4.9/string:52,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../LinkedList.hpp:4,
+                 from ../LinkedList01.cpp:1:
+/usr/include/c++/4.9/initializer_list:89:5: note:   'std::begin'
+     begin(initializer_list<_Tp> __ils) noexcept
+     ^
+/usr/include/c++/4.9/initializer_list:89:5: note:   'std::begin'
+../LinkedList01.cpp:81:17: error: 'end' was not declared in this scope
+     for (auto x:l2) num2.push_back(x);
+                 ^
+../LinkedList01.cpp:81:17: note: suggested alternatives:
+In file included from /usr/include/c++/4.9/bits/basic_string.h:42:0,
+                 from /usr/include/c++/4.9/string:52,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../LinkedList.hpp:4,
+                 from ../LinkedList01.cpp:1:
+/usr/include/c++/4.9/initializer_list:99:5: note:   'std::end'
+     end(initializer_list<_Tp> __ils) noexcept
+     ^
+/usr/include/c++/4.9/initializer_list:99:5: note:   'std::end'
+make: *** [LinkedList01.o] Error 1

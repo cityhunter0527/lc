@@ -1,0 +1,75 @@
+/*
+ * 255. Verify Preorder Sequence in Binary Search Tree
+ *
+ * Given an array of numbers, verify whether it is the correct preorder traversal sequence of a binary search tree.
+ *
+ * You may assume each number in the sequence is unique.
+ *
+ * Follow up:
+ * Could you do it using only constant space complexity?
+ *
+ * */
+#include <iostream>
+#include <vector>
+#include <cassert>
+using namespace std;
+
+class Solution {
+public:
+    // preOrder:
+    //   visit root
+    //   visit root->left
+    //   visit root->right
+    bool verifyPreorder(vector<int>& preorder) {
+        if (preorder.size()==0)
+            return true;
+        return verifyPreorder(preorder, 0, preorder.size());
+    }
+
+    bool verifyPreorder(vector<int>& preorder, int start, int end) {
+        if (start >= end) 
+            return true;
+        int root = preorder[start];
+        int i, j;
+        bool resLeft = true, resRight = true;
+        for (i = start+1; i < end; i++) {
+            if (preorder[i] > root) {
+                break;
+            }
+        }
+
+        if (i > start+1) {
+            resLeft = verifyPreorder(preorder, start+1, i);
+        }
+        if (resLeft == false) return false;
+        
+
+        for (j = i; j < end; j++) {
+            if (preorder[j] < root) {
+                resRight = false;
+                return false;
+            }
+        }
+        // now verify
+        resRight = verifyPreorder(preorder, i, end);
+        return resRight;
+    }
+};
+
+int main () {
+    vector<int> v = {10,7,4,8,6,40,23};
+    Solution s;
+    bool b = true;
+    b = s.verifyPreorder(v);
+    assert(!b);
+    
+    v = {4, 2,3,1};
+    b =  s.verifyPreorder(v);
+    assert(!b);
+    
+     F, B, A, D, C, E, G, I, H
+    v = {6,2,1,4,3,5,7,9,8};
+    b =  s.verifyPreorder(v);
+    assert(b);
+    return 1;
+}

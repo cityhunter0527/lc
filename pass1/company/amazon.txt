@@ -1,0 +1,53 @@
+Amazon
+ Show problem tags
+#
+ Title
+ Acceptance
+ Difficulty
+ Frequency
+ 1Two Sum27.8%Sum27Easy
+ 146 LRU Cache15.8%Cache15Hard
+ 200 Number of Islands30.9%Islands30Medium
+ 5   Longest Palindromic Substring24.0%Substring24Medium
+ 236 Lowest Common Ancestor of a Binary Tree29.2%Tree29Medium
+ 2   Add Two Numbers25.4%Numbers25Medium
+ 127 Word Ladder19.4%Ladder19Medium
+ 206 Reverse Linked List42.4%List42Easy
+ 297 Serialize and Deserialize Binary Tree29Medium30.4%Tree29Medium30Hard
+ 206 Valid Parentheses31.3%Parentheses31Easy
+ 17  Letter Combinations of a Phone Numbers25Medium31.3%Numbers25Medium31Medium
+ 138 Copy List with Random Pointer26.2%Pointer26Hard
+ 3   Longest Substring Without Repeating Characters23.3%Characters23Medium
+ 98  Validate Binary Search Tree29Medium30Hard21.9%Tree29Medium30Hard21Medium
+ 121 Best Time to Buy and Sell Stock38.2%Stock38Easy
+ 235 Lowest Common Ancestor of a Binary Search Tree29Medium30Hard21Medium37.8%Tree29Medium30Hard21Medium37Easy
+ 42  Trapping Rain Water34.4%Water34Hard
+ 155 Min Stack25.1%Stack25Easy
+ 48  Rotate Image36.4%Image36Medium
+ 139 Word Break27.2%Break27Medium
+ 141 Linked List Cycle36.1%Cycle36Easy
+ 155 Min3Sum20.3%155Min3Sum20Medium
+ 49  Group Anagrams30.6%Anagrams30Medium
+ 242 Valid Anagrams30Medium44.1%Anagrams30Medium44Easy
+ 238 Product of Array Except Self45.8%Self45Medium
+ 240 Search a 2D Matrix II37.0%II37Medium
+ 239 Sliding Window Maximum30.3%Maximum30Hard
+ 215 Kth Largest Element in an Array36.3%Array36Medium
+ 126 Word Ladder II37Medium13.7%II37Medium13Hard
+ 215 Merge Two Sorted Lists37.3%Lists37Easy
+ 239 SlidingMerge k Sorted Lists37Easy25.2%Lists37Easy25Hard
+ 160 Intersection of Two Linked Lists37Easy25Hard30.4%Lists37Easy25Hard30Easy
+ 234 Palindrome Linked Lists37Easy25Hard30Easy30.8%Lists37Easy25Hard30Easy30Easy
+ 8   String to Integer (atoi)atoi13.8%atoi13Easy
+ 78  Subsets35.0%78Subsets35Medium
+ 387 First Unique Character in a String44.1%String44Easy
+ 204 Count Primes25.7%Primes25Easy
+ 102 Binary Tree Level Order Traversal35.7%Traversal35Easy
+ 89  Gray Code38.6%Code38Medium
+ 380 Insert Delete GetRandom O(1)GetRandom36.1%GetRandom36Hard
+ 167 Two Sum II - Input array is Sorted48.1%Sorted48Medium
+ 199 Binary Tree Right Side View37.7%View37Medium
+ 355 Design Twitter23.8%Twitter23Medium
+ 186 Reverse Words in a String II    28.9%28Medium
+ 396 Rotate Function29.1%Function29Easy
+ 414 Third Maximum Numbers25Medium31Medium26.4%Numbers25Medium31Medium26Easy

@@ -1,0 +1,4 @@
+solution.cpp: In function 'int main()':
+solution.cpp:82:47: error: conversion from 'std::vector<std::basic_string<char> >' to non-scalar type 'std::string {aka std::basic_string<char>}' requested
+     string s = codec.decode(codec.encode(strs));
+                                               ^

@@ -1,0 +1,4 @@
+pvmutex.cpp: In function 'int main()':
+pvmutex.cpp:75:30: error: 'c1' was not declared in this scope
+     std::thread cons_thread2(c1);
+                              ^

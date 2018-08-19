@@ -1,0 +1,143 @@
+
+#
+Title
+Acceptance
+Difficulty
+Frequency
+388Longest Absolute File Path32.2%Path32Medium
+66Plus One36.1%One36Easy
+146LRU Cache15.8%Cache15Hard
+200Number of Islands30.9%Islands30Medium
+288Unique Word Abbreviation     15.4%15Easy
+56Merge Intervals27.5%Intervals27Hard
+308Range Sum Query 2D - Mutable     20.3%20Hard
+163Missing Ranges   30.0%30Medium
+228Summary Ranges27.0%Ranges27Medium
+298Binary Tree Longest Consecutive Sequence     38.9%38Medium
+279Perfect Squares34.4%Squares34Medium
+20HardValid Parentheses31.3%Parentheses31Easy
+340Longest Substring with At Most K Distinct Characters     39.1%39Hard
+345Reverse Vowels of a String36.7%String36Easy
+4Median of Two Sorted Arrays20.2%Arrays20Hard
+218The Skyline Problem24.6%Problem24Hard
+42Trapping Rain Water34.4%Water34Hard
+297Serialize and Deserialize Binary Tree30.4%Tree30Hard
+289Game of Life35.9%Life35Medium
+10Regular Expression Matching23.1%Matching23Hard
+271Encode and Decode Strings    27.0%27Medium
+281Zigzag Iterator  46.3%46Medium
+155Min Stack25.1%Stack25Easy
+295Find Median from Data Stream23.0%Stream23Hard
+23Merge k Sorted Lists25.2%Lists25Hard
+139Word Break27.2%Break27Medium
+128Longest Consecutive Sequence34.4%Sequence34Hard
+162Find Peak Element35.0%Element35Medium
+212Word Search II21.5%II21Hard
+239Sliding Window Maximum30.3%Maximum30Hard
+280Wiggle Sort  53.3%53Medium
+230Kth Smallest Element in a BST40.9%BST40Medium
+284Peeking Iterator34.8%Iterator34Medium
+317Shortest Distance from All Buildings     32.3%32Hard
+54Spiral Matrix24.0%Matrix24Medium
+286Walls and Gates  40.7%40Medium
+361Bomb Enemy   37.6%37Medium
+2593Sum Smaller     39.9%39Medium
+274H-Index31.4%Index31Medium
+166Fraction to Recurring Decimal16.4%Decimal16Medium
+133Clone Graph24.9%Graph24Medium
+44Wildcard Matching23Hard18.6%Matching23Hard18Hard
+346Moving Average from Data Stream  56.2%56Easy
+50Pow(x, n)50Pow27.3%50Pow27Medium
+231Power of Two38.7%Two38Easy
+329Longest Increasing Path in a Matrix24Medium34.2%Matrix24Medium34Hard
+246Strobogrammatic Number   38.0%38Easy
+228SummaryGenerate Parentheses31Easy40.4%Parentheses31Easy40Medium
+317ShortestNext Permutation27.8%Permutation27Medium
+140Word Break II21Hard21.4%II21Hard21Hard
+305Number of Islands II     36.9%36Hard
+318Maximum Product of Word Lengths41.5%Lengths41Medium
+315Count of Smaller Numbers After Self32.8%Self32Hard
+57Insert Intervals27Hard25.5%Intervals27Hard25Hard
+173Binary Search Tree Iterator34Medium37.7%Iterator34Medium37Medium
+173BinaryLetter Combinations of a Phone Numbers31.3%Numbers31Medium
+159Longest Substring with At Most Two Distinct Characters   38.2%38Hard
+276Paint Fence  33.1%33Easy
+247Strobogrammatic Number II    36.8%36Medium
+393UTF-8 Validation34.6%Validation34Medium
+253Meeting Rooms II     37.4%37Medium
+269Alien Dictionary     23.9%23Hard
+224Basic Calculator24.5%Calculator24Hard
+394Decode Strings39.5%Strings39Medium
+341Flatten Nested List Iterator34Medium37Medium36.3%Iterator34Medium37Medium36Medium
+351Android Unlock Patterns  40.5%40Medium
+418Sentence Screen Fitting  23.8%23Medium
+332Reconstruct Itinerary27.1%Itinerary27Medium
+324Wiggle Sort II24.5%II24Medium
+294Flip Game II     43.8%43Medium
+320Generalized Abbreviation     42.0%42Medium
+240Search a 2D Matrix II37.0%II37Medium
+270Closest Binary Search Tree Value     36.8%36Easy
+373Find K Pairs with Smallest Sums28.6%Sums28Medium
+380Insert Delete GetRandom O(1)GetRandom36.1%GetRandom36Hard
+389Find the Difference49.7%Difference49Easy
+336Palindrome Pairs23.2%Pairs23Hard
+406Queue Reconstruction by Height54.4%Height54Medium
+208Implement Trie (Prefix Tree)Tree25.6%Tree25Medium
+293Flip Game    52.6%52Easy
+249Group Shifted Strings    36.3%36Easy
+359Logger Rate Limiter  56.9%56Easy
+309Best Time to Buy and Sell Stock with Cooldown39.0%Cooldown39Medium
+391Perfect Rectangle20.2%Rectangle20Hard
+158Read N Characters Given Read4 II - Call multiple times   24.2%24Hard
+362Design Hit Counter   51.2%51Medium
+327Count of Range Sums28Medium27.9%Sums28Medium27Hard
+401Binary Watch42.7%Watch42Easy
+400Nth Digit30.0%Digit30Easy
+214Shortest Palindrome22.1%Palindrome22Hard
+360Sort Transformed Array   41.7%41Medium
+417Pacific Atlantic Water Flow30.4%Flow30Medium
+409Longest Palindrome22Hard44.2%Palindrome22Hard44Easy
+282Expression Add Operators27.3%Operators27Hard
+415Add Strings42.2%Strings42Easy
+348Design Tic-Tac-Toe   44.7%44Medium
+369Plus One Linked List     51.2%51Medium
+399Evaluate Division37.5%Division37Medium
+407Trapping Rain Water II32.8%II32Hard
+251Flatten 2D Vector    37.2%37Medium
+382Linked List Random Node45.6%Node45Medium
+272Closest Binary Search Tree Value II  36.2%36Hard
+375Guess Number Higher or Lower II33.2%II33Medium
+368Largest Divisible Subset32.2%Subset32Medium
+326Power of Three38.8%Three38Easy
+266Palindrome Permutation   53.8%53Easy
+358Rearrange String k Distance Apart    30.8%30Hard
+374Guess Number Higher or Lower32.5%Lower32Easy
+257Binary Tree Paths33.0%Paths33Easy
+397Integer Replacement27.9%Replacement27Medium
+354Russian Doll Envelopes30.7%Envelopes30Hard
+353Design Snake Game    24.7%24Medium
+302Smallest Rectangle Enclosing Black Pixels    42.1%42Hard
+402Remove K Digits25.6%Digits25Medium
+331Verify Preorder Serialization of a Binary Tree34.2%Tree34Medium
+323Number of Connected Components in an Undirected Graph    45.4%45Medium
+411Minimum Unique Word Abbreviation     28.7%28Hard
+261Graph Valid Tree     35.2%35Medium
+379Design Phone Directory   27.5%27Medium
+378Kth Smallest Element in a Sorted Matrix42.2%Matrix42Medium
+377Combination Sum IV40.8%IV40Medium
+313Super Ugly Number36.5%Number36Medium
+357Count Numbers with Unique Digits25Medium44.3%Digits25Medium44Medium
+316Remove Duplicate Letters27.7%Letters27Hard
+321Create Maximum Numbers23.1%Numbers23Hard
+425Word Squares     37.0%37Hard
+408Valid Word Abbreviation  26.1%26Easy
+356Line Reflection  28.8%28Medium
+314Binary Tree Vertical Order Traversal     33.8%33Medium
+363Max Sum of Rectangle No Larger Than K30.9%K30Hard
+330Patching Array30.9%Array30Hard
+312Burst Balloons40.7%Balloons40Hard
+421Maximum XOR of Two Numbers in an Array30Hard26.0%Array30Hard26Medium
+310Minimum Height Trees28.0%Trees28Medium
+422Valid Word Square    37.4%37Easy
+370Range Addition   51.7%51Medium
+

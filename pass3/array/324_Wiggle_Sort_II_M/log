@@ -1,0 +1,32 @@
+solution.cpp: In function 'int main()':
+solution.cpp:41:35: error: conversion from 'void' to non-scalar type 'std::vector<int>' requested
+     vector<int> o = s.wiggleSort(v);
+                                   ^
+solution.cpp:48:7: error: no match for 'operator=' (operand types are 'std::vector<int>' and 'void')
+     o = s.wiggleSort(v);
+       ^
+solution.cpp:48:7: note: candidates are:
+In file included from /usr/include/c++/4.9/vector:69:0,
+                 from /usr/include/c++/4.9/bits/random.h:34,
+                 from /usr/include/c++/4.9/random:49,
+                 from /usr/include/c++/4.9/bits/stl_algo.h:66,
+                 from /usr/include/c++/4.9/algorithm:62,
+                 from solution.cpp:17:
+/usr/include/c++/4.9/bits/vector.tcc:167:5: note: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = int; _Alloc = std::allocator<int>]
+     vector<_Tp, _Alloc>::
+     ^
+/usr/include/c++/4.9/bits/vector.tcc:167:5: note:   no known conversion for argument 1 from 'void' to 'const std::vector<int>&'
+In file included from /usr/include/c++/4.9/vector:64:0,
+                 from /usr/include/c++/4.9/bits/random.h:34,
+                 from /usr/include/c++/4.9/random:49,
+                 from /usr/include/c++/4.9/bits/stl_algo.h:66,
+                 from /usr/include/c++/4.9/algorithm:62,
+                 from solution.cpp:17:
+/usr/include/c++/4.9/bits/stl_vector.h:448:7: note: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = int; _Alloc = std::allocator<int>]
+       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+       ^
+/usr/include/c++/4.9/bits/stl_vector.h:448:7: note:   no known conversion for argument 1 from 'void' to 'std::vector<int>&&'
+/usr/include/c++/4.9/bits/stl_vector.h:470:7: note: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = int; _Alloc = std::allocator<int>]
+       operator=(initializer_list<value_type> __l)
+       ^
+/usr/include/c++/4.9/bits/stl_vector.h:470:7: note:   no known conversion for argument 1 from 'void' to 'std::initializer_list<int>'

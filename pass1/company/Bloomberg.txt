@@ -1,0 +1,67 @@
+
+#
+Title
+Acceptance
+Difficulty
+Frequency
+121Best Time to Buy and Sell Stock38.3%Stock38Easy
+138Copy List with Random Pointer26.3%Pointer26Hard
+283Move Zeroes46.9%Zeroes46Easy
+42Trapping Rain Water34.5%Water34Hard
+138CopyTwo Sum28.1%Sum28Easy
+387First Unique Character in a String44.5%String44Easy
+62Unique Paths38.5%Paths38Medium
+386Lexicographical Numbers37.4%Numbers37Medium
+160Intersection of Two Linked Lists30.3%Lists30Easy
+122Best Time to Buy and Sell Stock II44.8%II44Medium
+206Reverse Linked Lists30Easy42.6%Lists30Easy42Easy
+50Pow(x, n)50Pow27.2%50Pow27Medium
+232Implement Queue using Stacks34.8%Stacks34Easy
+268Missing Numbers37Medium42.8%Numbers37Medium42Medium
+69Sqrt(x)69Sqrt26.5%69Sqrt26Medium
+146LRU Cache15.9%Cache15Hard
+53Maximum Subarray38.2%Subarray38Medium
+155Min Stacks34Easy25.3%Stacks34Easy25Easy
+117Populating Next Right Pointers in Each Node II44Medium33.2%II44Medium33Hard
+215Kth Largest Element in an Array36.5%Array36Medium
+7Reverse Integer23.7%Integer23Easy
+206ReverseValid Parentheses31.4%Parentheses31Easy
+206ReverseValidAdd Two Numbers37Medium42Medium25.6%Numbers37Medium42Medium25Medium
+151Reverse Words in a String44Easy15.7%String44Easy15Medium
+225Implement Stack using Queues31.0%Queues31Easy
+88Merge Sorted Array36Medium31.1%Array36Medium31Easy
+98Validate Binary Search Tree22.0%Tree22Medium
+287Find the Duplicate Numbers37Medium42Medium25Medium41.1%Numbers37Medium42Medium25Medium41Hard
+56Merge Intervals27.6%Intervals27Hard
+105Construct Binary Tree from Preorder and Inorder Traversal30.3%Traversal30Medium
+268MissingRemove Duplicates from Sorted Array36Medium31Easy34.9%Array36Medium31Easy34Easy
+49Group Anagrams30.8%Anagrams30Medium
+141Linked List Cycle36.1%Cycle36Easy
+56MergeLongest Palindromic Substring24.0%Substring24Medium
+386LexicographicalLongest Substring Without Repeating Characters23.4%Characters23Medium
+88MergeString to Integer (atoi)atoi13.8%atoi13Easy
+103Binary Tree Zigzag Level Order Traversal30Medium31.3%Traversal30Medium31Medium
+138CopyTwoRoman to Integer42.6%Integer42Easy
+63Unique Paths II44Medium33Hard30.6%II44Medium33Hard30Medium
+100Same Tree44.8%Tree44Easy
+102Binary Tree Level Order Traversal30Medium31Medium35.9%Traversal30Medium31Medium35Easy
+79Word Search24.8%Search24Medium
+113Path Sum II44Medium33Hard30Medium30.6%II44Medium33Hard30Medium30Medium
+158Read N Characters Given Read4 II - Call multiple times   24.3%24Hard
+230Kth Smallest Element in a BST41.1%BST41Medium
+274H-Index31.5%Index31Medium
+445Add Two Numbers II40.7%II40Medium
+33Search in Rotated Sorted Array36Medium31Easy34Easy31.5%Array36Medium31Easy34Easy31Hard
+101Symmetric Tree36.3%Tree36Easy
+24HardSwap Nodes in Pairs36.8%Pairs36Easy
+208Implement Trie (Prefix Tree)Tree25.6%Tree25Medium
+160Intersection3Sum Closest30.3%Closest30Medium
+158Read3Sum20.4%158Read3Sum20Medium
+139Word Break27.4%Break27Medium
+113PathContainer With Most Water34Hard35.8%Water34Hard35Medium
+266Palindrome Permutation   54.0%54Easy
+131Palindrome Partitioning30.0%Partitioning30Medium
+189Rotate Array36Medium31Easy34Easy31Hard23.0%Array36Medium31Easy34Easy31Hard23Easy
+172Factorial Trailing Zeroes46Easy34.4%Zeroes46Easy34Easy
+297Serialize and Deserialize Binary Tree25Medium30.5%Tree25Medium30Hard
+110Balanced Binary Tree25Medium30Hard35.8%Tree25Medium30Hard35Easy

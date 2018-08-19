@@ -1,0 +1,4 @@
+solution.cpp: In function 'int main()':
+solution.cpp:102:28: error: 'root' was not declared in this scope
+     string s = c.serialize(root);
+                            ^

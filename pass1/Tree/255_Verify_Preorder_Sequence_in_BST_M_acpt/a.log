@@ -1,0 +1,10 @@
+solution.cpp: In member function 'bool Solution::verifyPreorder(std::vector<int>&, int, int)':
+solution.cpp:42:13: error: 'resLeft' was not declared in this scope
+             resLeft = verifyPreorder(preorder, start+1, i);
+             ^
+solution.cpp:44:13: error: 'resLeft' was not declared in this scope
+         if (resLeft == false) return false;
+             ^
+solution.cpp:49:17: error: 'resRight' was not declared in this scope
+                 resRight = false;
+                 ^

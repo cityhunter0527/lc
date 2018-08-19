@@ -1,0 +1,8 @@
+solution.cpp: In function 'void traversForest(TreeNode*, std::vector<int>&)':
+solution.cpp:86:30: error: 'traverseForest' was not declared in this scope
+         traverseForest(x, res);
+                              ^
+solution.cpp: In function 'int main()':
+solution.cpp:125:29: error: 'traverseForset' was not declared in this scope
+     traverseForset(root, out);
+                             ^
