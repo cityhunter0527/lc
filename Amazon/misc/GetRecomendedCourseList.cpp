@@ -41,9 +41,9 @@ private:
     unordered_map<string, vector<string>>       user_course_map_;
     // user's friend list;
     unordered_map<string, vector<string>>       user_friend_map_;
-    unordered_set<string>               social_;            // social friends with predefined 1st and 2nd level;
-    vector<pair<string, int>>           course_freq_;   // first: course name, second: frequency
-    unordered_map<string, int>          course_index_; // key: course name to index in course_freq_
+    unordered_set<string>                       social_;            // social friends with predefined 1st and 2nd level;
+    vector<pair<string, int>>                   course_freq_;   // first: course name, second: frequency
+    unordered_map<string, int>                  course_index_; // key: course name to index in course_freq_
 
     void update_course_for_user (string user) {
         // get this friend's course list;
@@ -76,13 +76,15 @@ public:
         // first level friends and their courses
         vector<string> friendL1 = getDirectFriends(user);
         for (const auto& x : friendL1) {
-            social_.insert(x);
-            update_course_for_user(x);
+            if (x != user) {
+                social_.insert(x);
+                update_course_for_user(x);
+            }
         }
         // 2nd level friends
         for (const auto& x : friendL1) {
             for (const auto& y : getDirectFriends(x)) {
-                if (social_.find(y) != social_.end()) {
+                if (y != user && social_.find(y) == social_.end()) {
                     // this is a new 2nd level fried
                     social_.insert(y);
                     update_course_for_user(y);
