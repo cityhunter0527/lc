@@ -26,6 +26,7 @@ The course that this user has already taken should not be recommended.
 #include <string>
 #include <random>
 #include <algorithm>
+#include <cassert>
 
 std::vector<std::string> user_list = {"Jon", "Ann", "Tom", "Joey", "Lee", "Mary", "Jerry", "Monica", "Jacky", "Stanley", "Danny", "Forest"};
 std::vector<std::string> course_list = {"Math", "Physics", "Arts", "Chemistry", "Gym", "Data_Structure", "Operating_System", "Machine_Learning", "Algorithms", "Graph", "Painting", "Swimming", "Boxing", "Tennis"};
@@ -127,7 +128,9 @@ public:
             course_list_vec.push_back(std::make_pair(x.second, x.first));
         }
 
-        std::sort(course_list_vec.begin(), course_list_vec.end());
+        std::sort(course_list_vec.begin(), course_list_vec.end(), 
+                [](std::pair<std::uint32_t, std::string> a, std::pair<std::uint32_t, std::string> b)
+                { return a.first > b.first;});
 
         for (auto& x : course_list_vec) {
             res.push_back(x.second);
