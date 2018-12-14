@@ -28,17 +28,19 @@ public:
     // test caes:
     // vector<int> v {20, 98, 58, 38, 51, 92, 78, 82, 92, 49, 75, 56};
     // int f1 = 75, f2 = 92;
+    //
     void partition(vector<int>& arr, int f1, int f2) {
-        // after below call, it will be
-        // {20, 56, 58, 38, 51, 75, 49, 82, 92, 78, 92, 98} // << note 49 is on left side of 75 which is not allowed
-        // we can not replace val < f1 with val <= f1, because we need to put all the elements equal to f1 to left part.
-        auto mid = std::stable_partition(arr.begin(), arr.end(), [&](int val){return val <= f1;});
-        // then we call partition again to strictly move all elements smaller than f1 (val < f1) to the left part
-        std::stable_partition(arr.begin(), mid, [&](int val){return val < f1;});
+        auto mid = std::partition(arr.begin(), arr.end(), [&](int i) { return i <= f1; });      
+        std::partition(arr.begin(), mid, [&](int i) { return i < f1; });      
+        auto mid2 = std::partition(mid, arr.end(), [&](int i) { return i <= f2; });      
+        std::partition(mid, mid2, [&](int i) { return i < f2; });      
+    }
 
-        // Do the same as f2;
-        auto mid2 = std::stable_partition(mid, arr.end(), [&](int val){return val <= f2;});
-        std::stable_partition(mid, mid2, [&](int val){return val < f2;});
+    void stable_partition(vector<int>& arr, int f1, int f2) {
+        auto mid = std::stable_partition(arr.begin(), arr.end(), [&](int i) { return i <= f1; });      
+        std::stable_partition(arr.begin(), mid, [&](int i) { return i < f1; });      
+        auto mid2 = std::stable_partition(mid, arr.end(), [&](int i) { return i <= f2; });      
+        std::stable_partition(mid, mid2, [&](int i) { return i < f2; });      
     }
 };
 
@@ -50,30 +52,37 @@ void test(vector<int>& arr, int n, int& f1, int& f2) {
 
     f1 = min(arr[n/2], arr[n-1]);
     f2 = max(arr[n/2], arr[n-1]); 
-    cout << "f1: " << f1 << ", f2: " << f2 << endl;
-    for (auto x:arr)
-        cout << x << ", ";
-    cout << endl;
+}
+
+void dump(vector<int>& v) {
+    for (auto x:v) 
+        std::cout << x << ", ";
+    std::cout << "\n";
 }
 
 int main() {
     vector<int> v {20, 98, 58, 38, 51, 92, 78, 82, 92, 49, 75, 56};
+    std::cout << "Before parition: \n";
+    dump(v);
+
     int f1 = 75, f2 = 92;
-        Solution s;
-        s.partition(v, f1, f2);
-        for (auto x:v) 
-            cout << x << ", ";
-        cout << endl;
-#if 0
+    Solution s;
+    s.stable_partition(v, f1, f2);
+
+    std::cout << "After Partition: f1: " << f1 << ", f2: " << f2 << "\n";
+    dump(v);
+
     int i = 0;
     srand(time(NULL));
     while (i++ < 100) {
+        std::cout << "\n============== Test " << i << "=================\n";
         test(v, 15, f1, f2);
+        std::cout << "Before parition: \n";
+        dump(v);
+
         Solution s;
-        s.partition(v, f1, f2);
-        for (auto x:v) 
-            cout << x << ", ";
-        cout << endl;
+        s.stable_partition(v, f1, f2);
+        std::cout << "After Partition: f1: " << f1 << ", f2: " << f2 << "\n";
+        dump(v);
     }
-#endif
 }
