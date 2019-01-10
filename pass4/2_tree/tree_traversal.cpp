@@ -43,7 +43,7 @@ public:
                 p = s.top();
                 s.pop();
                 // visit this node;
-                res.push_back(p);
+                res.push_back(p->val);
                 p = p->right;
             }
         }
@@ -52,7 +52,7 @@ public:
     
     std::vector<int> post_order_traversal_iterative(TreeNode* root) {
         std::vector<int> res;
-        TreeNode* p = root, last_visted_node = nullptr;
+        TreeNode* p = root, *last_visted_node = nullptr;
         std::stack<TreeNode*> s;
         while (!s.empty() || p) {
             if (p) {
