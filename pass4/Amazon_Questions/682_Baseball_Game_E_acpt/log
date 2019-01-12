@@ -1,0 +1,17 @@
+solution.cpp: In function ‘int main()’:
+solution.cpp:74:5: error: ‘string’ was not declared in this scope
+     string t ="52CD+;"
+     ^~~~~~
+solution.cpp:74:5: note: suggested alternatives:
+In file included from /usr/include/c++/7/iosfwd:39:0,
+                 from /usr/include/c++/7/ios:38,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from solution.cpp:40:
+/usr/include/c++/7/bits/stringfwd.h:74:33: note:   ‘std::__cxx11::string’
+   typedef basic_string<char>    string;
+                                 ^~~~~~
+/usr/include/c++/7/bits/stringfwd.h:74:33: note:   ‘std::__cxx11::string’
+solution.cpp:76:5: error: ‘t’ was not declared in this scope
+     t = "5-24CD9++";
+     ^
