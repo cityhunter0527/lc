@@ -1,0 +1,8 @@
+solution.cpp: In member function ‘void LRUCache::put(int, int)’:
+solution.cpp:68:55: error: ‘val’ was not declared in this scope
+             m_lru_list.push_front(std::make_pair(key, val));
+                                                       ^~~
+solution.cpp:68:55: note: suggested alternative: ‘value’
+             m_lru_list.push_front(std::make_pair(key, val));
+                                                       ^~~
+                                                       value
