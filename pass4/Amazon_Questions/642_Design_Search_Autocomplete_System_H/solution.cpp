@@ -68,6 +68,12 @@
  * 5. Please remember to RESET your class variables declared in class AutocompleteSystem, 
  *    as static/class variables are persisted across multiple test cases. Please see here for more details.
  * */
+
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <iostream>
+
 #define NUM_CHAR_TYPES  256
 class TrieNode {
 public:
@@ -78,18 +84,36 @@ public:
         prefix_cnt = 0;
         sentence_cnt = 0;
     }
-    size_t prefix_cnt;
-    size_t sentence_cnt;
+    uint32_t prefix_cnt;
+    uint32_t sentence_cnt;
     std::vector<TrieNode*> c;
     bool is_end;
 };
 
 class AutocompleteSystem {
 public:
-    AutocompleteSystem(vector<string> sentences, vector<int> times) {
+    void add_word(std::string sentence, TrieNode* p, int times) {
+        for (auto x : sentence) {
+                if (x != '#') {
+                    if (p->c[x] == nullptr) {
+                        p->c[x] = new TrieNode();
+                    }
+                    p->prefix_cnt++;
+                    p = p->c[x];
+                }
+            }
+            p->is_end = true;
+            p->sentence_cnt = times;
+    }
+    
+    AutocompleteSystem(std::vector<std::string> sentences, std::vector<int> times) {
         root = new TrieNode();
         TrieNode* p = root;
-        for (size_t i = 0; i < sentences.size(); i++) {
+        int n = sentences.size();
+        for (uint32_t i = 0; i < n; i++) {
+            p = root;
+            add_word(sentences[i], p, times[i]);
+#if 0
             for (auto x : sentences[i]) {
                 if (x != '#') {
                     if (p->c[x] == nullptr) {
@@ -101,55 +125,107 @@ public:
             }
             p->is_end = true;
             p->sentence_cnt = times[i];
+#endif
         }
     }
 
     std::vector<std::string> input(char d) {
         std::vector<std::string>     res(3);
+        // Need to save the input in m_input as user might type chars one by one and we need to adjust the return by the input;
+        // e.g. input('i') and input(' '), m_input would be "i ", 
+        if (d =='#') {
+            add_word(m_input, root, 1); // FIXME: replace 1 as the m_input could have been input before; in this case the m_input could ocurred twice or even more;
+            // 
+            // Input:
+            // ["AutocompleteSystem","input","input","input","input","input","input","input","input","input","input","input","input"]
+            // [[["i love you","island","iroman","i love leetcode"],[5,3,2,2]],["i"],[" "],["a"],["#"],["i"],[" "],["a"],["#"],["i"],[" "],["a"],["#"]]
+            // Output:
+            // [null,["i love you","island","i love leetcode"],["i love you","i love leetcode"],[],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[]]
+            // Expected:
+            // [null,["i love you","island","i love leetcode"],["i love you","i love leetcode"],[],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[],["i love you","island","i a"],["i love you","i a","i love leetcode"],["i a"],[]]
+            //
+            m_input.clear();
+            res.resize(0);
+            return res;
+        }
+        m_input.push_back(d);
         int m1= 0, m2 = 0, m3= 0;   // m1 <= m2 <= m3
-        std::string s;
-        s.push_back(d);
-        dfs(root->c[d], s, res, m1, m2, m3);
+        
+        std::string s(m_input);
+
+        // get the node p that starts with "i ";
+        TrieNode *p = get_node(root, s);
+
+        // if no such node, just return null
+        if (p == nullptr) {
+            res.resize(0);
+            return res;
+        }
+
+        // otherwise, do dfs search and save the results in res;
+        // m1, m2, and m3 is the top 3 num of occurences in which m1 <= m2 <= m3
+        dfs(p, s, res, m1, m2, m3);
+        // if there are less than 3 results, we need to remove the empty ones;
+        if (res[2] == "") res.pop_back();
+        if (res[1] == "") res.pop_back();
+        if (res[0] == "") res.pop_back();
+        return res;
+    }
+
+    TrieNode* get_node(TrieNode *x, std::string& s) {
+        for (int i = 0; i < s.size(); i ++) {
+            if (x->c[s[i]]) {
+                x = x->c[s[i]];
+            } else 
+                return nullptr;
+        }
+        return x;
     }
 
     void dfs(TrieNode *x, std::string& s, std::vector<std::string>& res, int& m1, int& m2, int& m3) {
         if (x->is_end) {
             // we've got a complete sentence saved in s while do depth-first-search;
             // let's check whether this sentence is of top 3
-            if (x->sentence_cnt > m3 || (x->sentence_cnt == m3 && s.compare(res[2]) > 0)) {
-                res[0] = res[1];
-                res[1] = res[2];
-                res[2] = s;
+            if (x->sentence_cnt > m3 || (x->sentence_cnt == m3 && s.compare(res[2]) < 0)) {
+                res[2] = res[1];
+                res[1] = res[0];
+                res[0] = s;
                 m1 = m2;
-                m2 = m1;
+                m2 = m3;
                 m3 = x->sentence_cnt;
-            } else if (x->sentence_cnt > m2 || (x->sentence_cnt == m3 && s.compare(res[2]) < 0) || (x->sentence_cnt == m2 && s.compare(res[1]) > 0)){
+            } else if (x->sentence_cnt > m2 || (x->sentence_cnt == m3 && s.compare(res[2]) > 0) || (x->sentence_cnt == m2 && s.compare(res[1]) < 0)){
                 // m3 keeps unchanged; m1 to be removed
-                res[0] = res[1];
+                res[2] = res[1];
                 res[1] = s;
                 m1 = m2;
                 m2 = x->sentence_cnt;
-            } else if (x->sentence_cnt > m1 || (x->sentence_cnt == m2 && s.compare(res[1]) < 0) || (x->sentence_cnt == m1 && s.compare(res[0]) > 0)){
-                res[0] = s;
+            } else if (x->sentence_cnt > m1 || (x->sentence_cnt == m2 && s.compare(res[1]) > 0) || (x->sentence_cnt == m1 && s.compare(res[0]) < 0)){
+                res[2] = s;
                 m1 = x->sentence_cnt;       
             } 
+
+            // FIXME: even s is a complete sentence, we need to keep searching down to see whether there are any other sentences starting with s;
+            //
+            // E.g. 
+            // "i love you" is a sentence;
+            // "i love you leetcode" is also a sentence;
         } else {
             // not a complete sentence yet;
             // keep searching with dfs;
-            for (char i = 0; i < NUM_CHAR_TYPES; i++) {
+            for (size_t i = 0; i < NUM_CHAR_TYPES; i++) {
                 if (x->c[i]) {
                     s.push_back(i);
                     dfs(x->c[i], s, res, m1, m2, m3);
                     // when its done, need to pop it from s so that we only form strings traversing that belongs to a sentence;
-                    s.pop_back(i);
-                }
-                // if x->c[i] is null, just skip this one and keep try others;
+                    s.pop_back();
+                } 
             }
         }
     }
 
 private:
     TrieNode   *root;
+    std::string m_input;
 };
 
 /**
@@ -159,5 +235,13 @@ private:
  *  */
 
 int main() {
+    std::vector<int> times = {5,3,2,2};
+    std::vector<std::string>  sentences = {"i love you#", "island#","ironman#", "i love leetcode#"};
+    AutocompleteSystem* obj = new AutocompleteSystem(sentences, times);
+    std::vector<std::string> o =  obj->input('i');
+
+    for (auto& x : o) {
+        std::cout << x << std::endl;
+    }
     return 0;
 }
