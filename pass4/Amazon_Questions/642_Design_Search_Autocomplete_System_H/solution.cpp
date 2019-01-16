@@ -103,8 +103,12 @@ public:
                 p = p->c[x];
             }
         }
-        p->is_end = true;
-        p->sentence_cnt = times;
+        if (p->is_end) 
+            p->sentence_cnt += times;
+        else {
+            p->is_end = true;
+            p->sentence_cnt = times;
+        }
     }
     
     AutocompleteSystem(std::vector<std::string> sentences, std::vector<int> times) {
@@ -122,9 +126,8 @@ public:
         // Need to save the input in m_input as user might type chars one by one and we need to adjust the return by the input;
         // e.g. input('i') and input(' '), m_input would be "i ", 
         if (d =='#') {
-            if (m.find(m_input) == m.end()) m[m_input] = 1;
-            else m[m_input]++;
-            add_word(m_input, root, m[m_input]); 
+            add_word(m_input, root, 1); 
+            
             m_input.clear();
             res.resize(0);
             return res;
@@ -162,11 +165,13 @@ public:
         }
         return x;
     }
-
+    
+    // TODO: only beats 4.6%. Do some improvement;
     void dfs(TrieNode *x, std::string& s, std::vector<std::string>& res, int& m1, int& m2, int& m3) {
         if (x->is_end) {
             // we've got a complete sentence saved in s while do depth-first-search;
             // let's check whether this sentence is of top 3
+            // "Batmap".compare("Superman")  < 0;
             if (x->sentence_cnt > m3 || (x->sentence_cnt == m3 && s.compare(res[2]) < 0)) {
                 res[2] = res[1];
                 res[1] = res[0];
@@ -174,23 +179,18 @@ public:
                 m1 = m2;
                 m2 = m3;
                 m3 = x->sentence_cnt;
-            } else if (x->sentence_cnt > m2 || (x->sentence_cnt == m3 && s.compare(res[2]) > 0) || (x->sentence_cnt == m2 && s.compare(res[1]) < 0)){
+            } else if (x->sentence_cnt > m2 || (x->sentence_cnt == m3 && m3 > m2 && s.compare(res[2]) > 0) || (x->sentence_cnt == m2 && s.compare(res[1]) < 0)){
                 // m3 keeps unchanged; m1 to be removed
                 res[2] = res[1];
                 res[1] = s;
                 m1 = m2;
                 m2 = x->sentence_cnt;
-            } else if (x->sentence_cnt > m1 || (x->sentence_cnt == m2 && s.compare(res[1]) > 0) || (x->sentence_cnt == m1 && s.compare(res[0]) < 0)){
+            } else if (x->sentence_cnt > m1 || (x->sentence_cnt == m2 && m2 > m1 && s.compare(res[1]) > 0) || (x->sentence_cnt == m1 && s.compare(res[0]) < 0)){
                 res[2] = s;
                 m1 = x->sentence_cnt;       
             } 
-
-            // FIXME: even s is a complete sentence, we need to keep searching down to see whether there are any other sentences starting with s;
-            //
-            // E.g. 
-            // "i love you" is a sentence;
-            // "i love you leetcode" is also a sentence;
-        } else {
+        } 
+        //else {
             // not a complete sentence yet;
             // keep searching with dfs;
             for (size_t i = 0; i < NUM_CHAR_TYPES; i++) {
@@ -201,13 +201,13 @@ public:
                     s.pop_back();
                 } 
             }
-        }
+        //}
     }
 
 private:
     TrieNode   *root;
     std::string m_input;
-    std::map<std::string, int>  m;
+    //std::map<std::string, int>  m;
 };
 
 /**
@@ -231,6 +231,7 @@ void print(std::vector<std::string>  o) {
 // [null,["i love you","island","i love leetcode"],["i love you","i love leetcode"],[],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[],["i love you","island","i a"],["i love you","i a","i love leetcode"],["i a"],[]]
 //
 int main() {
+    // test case 1
     std::vector<int> times = {5,3,2,2};
     std::vector<std::string>  sentences = {"i love you#", "island#","ironman#", "i love leetcode#"};
     AutocompleteSystem* obj = new AutocompleteSystem(sentences, times);
@@ -249,6 +250,41 @@ int main() {
     print(obj->input(' '));
     print(obj->input('a'));
     print(obj->input('#'));
+    delete obj;
+
+ /*   test case 2
+  *  
+  *  ["AutocompleteSystem","input","input","input","input","input","input","input","input","input","input","input","input","input","input"]
+  *  [[["abc","abbc","a"],[3,3,3]],["b"],["c"],["#"],["b"],["c"],["#"],["a"],["b"],["c"],["#"],["a"],["b"],["c"],["#"]]
+  *  
+  *  Output:
+  *  [null,[],[],[],["bc"],["bc"],[],["a"],["abbc","abc"],["abc"],[],["a"],["abbc","abc"],["abc"],[]]
+  *  
+  *  Expected:
+  *  [null,[],[],[],["bc"],["bc"],[],["a","abbc","abc"],["abbc","abc"],["abc"],[],["abc","a","abbc"],["abc","abbc"],["abc"],[]] 
+  *  */
+    times.clear();
+    sentences.clear();
+    times = {3,3,3};
+    sentences = {"abc", "abbc", "a"};
+    AutocompleteSystem* obj2 = new AutocompleteSystem(sentences, times);
+    print(obj2->input('b'));
+    print(obj2->input('c'));
+    print(obj2->input('#'));
+
+    print(obj2->input('b'));
+    print(obj2->input('c'));
+    print(obj2->input('#'));
+    
+    print(obj2->input('a'));
+    print(obj2->input('b'));
+    print(obj2->input('c'));
+    print(obj2->input('#'));
+
+    print(obj2->input('a'));
+    print(obj2->input('b'));
+    print(obj2->input('c'));
+    print(obj2->input('#'));
 
     return 0;
 }
