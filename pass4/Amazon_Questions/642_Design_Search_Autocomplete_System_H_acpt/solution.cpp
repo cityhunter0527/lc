@@ -75,6 +75,11 @@
 #include <iostream>
 #include <map>
 
+
+// 
+// TODO: Improve performance, 256 could be reduced to 26 (a~z), plus whitespace;
+// e.g. map 'a' to index 0, ..., 'z' to 25, and ' ' to 26;
+//
 #define NUM_CHAR_TYPES  256
 class TrieNode {
 public:
@@ -166,7 +171,6 @@ public:
         return x;
     }
     
-    // TODO: only beats 4.6%. Do some improvement;
     void dfs(TrieNode *x, std::string& s, std::vector<std::string>& res, int& m1, int& m2, int& m3) {
         if (x->is_end) {
             // we've got a complete sentence saved in s while do depth-first-search;
