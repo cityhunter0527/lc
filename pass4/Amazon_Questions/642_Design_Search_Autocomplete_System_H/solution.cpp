@@ -73,6 +73,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <map>
 
 #define NUM_CHAR_TYPES  256
 class TrieNode {
@@ -94,16 +95,16 @@ class AutocompleteSystem {
 public:
     void add_word(std::string sentence, TrieNode* p, int times) {
         for (auto x : sentence) {
-                if (x != '#') {
-                    if (p->c[x] == nullptr) {
-                        p->c[x] = new TrieNode();
-                    }
-                    p->prefix_cnt++;
-                    p = p->c[x];
+            if (x != '#') {
+                if (p->c[x] == nullptr) {
+                    p->c[x] = new TrieNode();
                 }
+                p->prefix_cnt++;
+                p = p->c[x];
             }
-            p->is_end = true;
-            p->sentence_cnt = times;
+        }
+        p->is_end = true;
+        p->sentence_cnt = times;
     }
     
     AutocompleteSystem(std::vector<std::string> sentences, std::vector<int> times) {
@@ -113,19 +114,6 @@ public:
         for (uint32_t i = 0; i < n; i++) {
             p = root;
             add_word(sentences[i], p, times[i]);
-#if 0
-            for (auto x : sentences[i]) {
-                if (x != '#') {
-                    if (p->c[x] == nullptr) {
-                        p->c[x] = new TrieNode();
-                    }
-                    p->prefix_cnt++;
-                    p = p->c[x];
-                }
-            }
-            p->is_end = true;
-            p->sentence_cnt = times[i];
-#endif
         }
     }
 
@@ -134,16 +122,9 @@ public:
         // Need to save the input in m_input as user might type chars one by one and we need to adjust the return by the input;
         // e.g. input('i') and input(' '), m_input would be "i ", 
         if (d =='#') {
-            add_word(m_input, root, 1); // FIXME: replace 1 as the m_input could have been input before; in this case the m_input could ocurred twice or even more;
-            // 
-            // Input:
-            // ["AutocompleteSystem","input","input","input","input","input","input","input","input","input","input","input","input"]
-            // [[["i love you","island","iroman","i love leetcode"],[5,3,2,2]],["i"],[" "],["a"],["#"],["i"],[" "],["a"],["#"],["i"],[" "],["a"],["#"]]
-            // Output:
-            // [null,["i love you","island","i love leetcode"],["i love you","i love leetcode"],[],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[]]
-            // Expected:
-            // [null,["i love you","island","i love leetcode"],["i love you","i love leetcode"],[],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[],["i love you","island","i a"],["i love you","i a","i love leetcode"],["i a"],[]]
-            //
+            if (m.find(m_input) == m.end()) m[m_input] = 1;
+            else m[m_input]++;
+            add_word(m_input, root, m[m_input]); 
             m_input.clear();
             res.resize(0);
             return res;
@@ -226,6 +207,7 @@ public:
 private:
     TrieNode   *root;
     std::string m_input;
+    std::map<std::string, int>  m;
 };
 
 /**
@@ -233,15 +215,40 @@ private:
  *  AutocompleteSystem obj = new AutocompleteSystem(sentences, times);
  *  vector<string> param_1 = obj.input(c);
  *  */
-
+    
+void print(std::vector<std::string>  o) {
+    for (auto& x : o) {
+        std::cout << x << std::endl;
+    }
+    std::cout << "===============" << std::endl;
+}
+// Input:
+// ["AutocompleteSystem","input","input","input","input","input","input","input","input","input","input","input","input"]
+// [[["i love you","island","iroman","i love leetcode"],[5,3,2,2]],["i"],[" "],["a"],["#"],["i"],[" "],["a"],["#"],["i"],[" "],["a"],["#"]]
+// Output:
+// [null,["i love you","island","i love leetcode"],["i love you","i love leetcode"],[],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[]]
+// Expected:
+// [null,["i love you","island","i love leetcode"],["i love you","i love leetcode"],[],[],["i love you","island","i love leetcode"],["i love you","i love leetcode","i a"],["i a"],[],["i love you","island","i a"],["i love you","i a","i love leetcode"],["i a"],[]]
+//
 int main() {
     std::vector<int> times = {5,3,2,2};
     std::vector<std::string>  sentences = {"i love you#", "island#","ironman#", "i love leetcode#"};
     AutocompleteSystem* obj = new AutocompleteSystem(sentences, times);
-    std::vector<std::string> o =  obj->input('i');
+    std::vector<std::string> o = obj->input('i');
+    print(o);
+    print(obj->input(' '));
+    print(obj->input('a'));
+    print(obj->input('#'));
 
-    for (auto& x : o) {
-        std::cout << x << std::endl;
-    }
+    print(obj->input('i'));
+    print(obj->input(' '));
+    print(obj->input('a'));
+    print(obj->input('#'));
+
+    print(obj->input('i'));
+    print(obj->input(' '));
+    print(obj->input('a'));
+    print(obj->input('#'));
+
     return 0;
 }
