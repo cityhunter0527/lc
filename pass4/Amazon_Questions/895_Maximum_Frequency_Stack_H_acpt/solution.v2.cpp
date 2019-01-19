@@ -63,21 +63,16 @@ The total number of FreqStack.push and FreqStack.pop calls will not exceed 15000
 #include <unordered_map>
 #include <vector>
 #include <cassert>
+#include <unordered_set>
 
 class FreqStack {
-
 public:
-    FreqStack() {
-
-    }
-
+    FreqStack() { }
     void push(int x) {
         // 1. push x to deque;
         m_deque.emplace_front(x);
-
         // 2. update x's occurences in m_map
         m_map[x]++;
-
         // 3. update x in multimap
         if (m_map[x] > 1) {
             // 3.a if x has been inserted to multimap before, first remove it from its previous num_of_occurrences;
@@ -92,14 +87,15 @@ public:
                 }
             }
         }
-        
+        // 4. insert x's num_of_occurences into max_heap, if the number already exists, the maxheap should ignore this insert;
+        if (m_set.find(m_map[x]) == m_set.end()) {
+            // m_max_heap should never have duplicate keys;
+            m_max_heap.push(m_map[x]);
+            m_set.insert(m_map[x]);
+        }
         // 3.b insert x to new place;
         m_multimap.insert(std::make_pair(m_map[x], x));
-        
-        // 4. insert x's num_of_occurences into max_heap, if the number already exists, the maxheap should ignore this insert;
-        m_max_heap.push(m_map[x]);
     }
-    
     int pop() {
         int res = 0;
         for (auto it = m_deque.begin(); it != m_deque.end(); it++) {
@@ -108,12 +104,10 @@ public:
                 res = *it;
                 // 1. remove it from deque;
                 m_deque.erase(it);
- 
-                assert(m_map[res] > 0);
+                //assert(m_map[res] > 0);
                 // 2. update m_map
                 // It is okay to decrease m_map[res] to 0 if res doesn't exist anymore;
                 m_map[res]--;
-                
                 // 3. remove res from its original num_of_occurences in multimap;
                 auto range = m_multimap.equal_range(m_max_heap.top());
                 for (auto it = range.first; it != range.second; it++) {
@@ -122,17 +116,20 @@ public:
                         break;
                     }
                 }
-                
                 // 4. update the max heap;
                 // 4.a first, add the decreased num_of_occurences into the heap
-                if (m_map[res] > 0) m_max_heap.push(m_map[res]);
-                
+                if ((m_map[res] > 0) && (m_set.find(m_map[res]) == m_set.end())) { 
+                    m_set.insert(m_map[res]);
+                    m_max_heap.push(m_map[res]);
+                }
                 // 4.b if this is the last element of the max num_of_occurences being poped, remove the top value in the heap;
                 if (m_multimap.count(m_max_heap.top()) == 0)  {
+                    // remove it from the set;
+                    m_set.erase(m_max_heap.top());
                     // no element left in this num_of_occurences, remove the top element in maxheap;
                     m_max_heap.pop();
                 }
-
+                m_multimap.insert(std::make_pair(m_map[res], res));
                 break;
             }
         } 
@@ -144,6 +141,7 @@ private:
     std::unordered_map<int, int>        m_map;      // map of elements ==> # of occurences;
     std::deque<int>                     m_deque;    // deque of pushed element 
     std::priority_queue<int>            m_max_heap; // by default, it is maxheap
+    std::unordered_set<int>             m_set;      // whether num_of_occurrences has been added to max_heap (only allow unique keys in max heap)
 };
 
 /**
@@ -153,8 +151,16 @@ private:
  * int param_2 = obj.pop();
  */
 
+void print_vec(std::vector<int>& o) {
+    for (auto x: o) {
+        std::cout << x << ", ";
+    }
+    std::cout << std::endl;
+}
+
 int main() {
     FreqStack s;
+    std::vector<int> o;
     s.push(5);
     s.push(7);
     s.push(5);
@@ -162,11 +168,47 @@ int main() {
     s.push(4);
     s.push(5);
     
-    std::cout << s.pop() << "\n";
-    std::cout << s.pop() << "\n";
-    std::cout << s.pop() << "\n";
-    std::cout << s.pop() << "\n";
-    std::cout << s.pop() << "\n";
-    std::cout << s.pop() << "\n";
+    // [5,7,5,7,4,5]
+    // 5, [5,7,5,7,4]
+    o.push_back(s.pop()); 
+    // 7, [5,7,5,4]
+    o.push_back(s.pop()); 
+    // 5, [5,7,4]
+    o.push_back(s.pop()); 
+    // 4, [5,7]
+    o.push_back(s.pop()); 
+    // 7, [5]
+    o.push_back(s.pop()); 
+    // 5
+    o.push_back(s.pop()); 
+    print_vec(o);
+
+    o.clear();
+    
+    FreqStack s2;
+    //[5],[1],[2],[5],[5],[5],[1],[6],[1]
+    s2.push(5);
+    s2.push(1);
+    s2.push(2);
+    s2.push(5);
+    s2.push(5);
+    s2.push(5);
+    s2.push(1);
+    s2.push(6);
+    s2.push(1);
+
+    o.push_back(s2.pop());
+    o.push_back(s2.pop());
+    o.push_back(s2.pop());
+    o.push_back(s2.pop());
+    o.push_back(s2.pop());
+    o.push_back(s2.pop());
+    o.push_back(s2.pop());
+    o.push_back(s2.pop());
+    o.push_back(s2.pop());
+
+    // [5,5,1,5,1,5,6,2,1,5]
+    print_vec(o);
+
     return 0;
 }
