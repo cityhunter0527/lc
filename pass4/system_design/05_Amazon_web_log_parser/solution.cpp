@@ -2,9 +2,8 @@
  * amazon web log per week 
    generate 7 web log file (1 file per day)
 
-   log;
+log:
    url, user id, request time ...
-
    generate a list of user ids that visit amazon every day.
 
    plus:
@@ -28,7 +27,5 @@ public:
 int main() {
     return 1;
 }
-
-
 
 
