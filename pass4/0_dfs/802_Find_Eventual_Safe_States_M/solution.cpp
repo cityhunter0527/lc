@@ -32,67 +32,50 @@ Each graph[i] will be a sorted list of different integers, chosen within the ran
 
 #include <iostream>
 #include <stack>
+#include <deque>
 #include <vector>
-
 
 enum class Visited { white, grey, black };
 
 class Solution {
 public:
     std::vector<int> eventualSafeNodes(std::vector<std::vector<int>>& graph) {
-        std::vector<int> res;
-        std::stack<int> s;
         uint32_t num_nodes = graph.size();
+        std::vector<int> res;
         std::vector<Visited> v(num_nodes, Visited::white);
-        
-        uint32_t start = 0, cur = start;
-        s.push(start); 
-        while (!s.empty()) {
-            cur = s.top();
-            bool dfs = false;
-            for (uint32_t i = 0 ; i < graph[cur].size(); i++) {
-                uint32_t n = graph[cur][i];
-                if (v[n] == Visited::white) {
-                    v[n] = Visited::grey;
-                    s.push(n);
-                    // break out of the for loop to do dfs;
-                    dfs = true;
-                    break;
-                } else if (v[n] == Visited::grey) {
-                    // we've got a loop and pop up all the nodes in stack (which forms the loop) 
-                    // mark all the nodes as visited
-                    while (!s.empty()) {
-                        v[s.top()] = Visited::black;
-                        s.pop();
-                    }
-                    break;
-                } else {
-                    // black
-                    res.push_back(i);
-                    continue;
-                }
+        for (uint32_t i = 0; i < num_nodes; i++) {
+            if (dfs(i, graph, v)) {
+                res.push_back(i);
             }
-
-            if (!dfs) {
-                // all the connected nodes with cur have been visited and there is no loop,
-                // add this node to return result;
-                res.push_back(cur);
-                s.pop();
-            }
-
-            if (s.empty()) {
-                start++;
-                if (start < num_nodes) {
-                    // keep going
-                    s.push(start);
-                } else {
-                    // reach last node, we are done
-                    break;
-                }
-            }
-
         }
         return res;
+    }
+
+private:
+    // true: no loop
+    // false: loop
+    //
+    // white: never visited;
+    // grey: "being visited" 
+    // black: visited and definitely no loop
+    //
+    bool dfs(int n, std::vector<std::vector<int>>& g, std::vector<Visited>& v) {
+        if (v[n] != Visited::white) {
+            // there is no loop if n's color is black;
+            return v[n] == Visited::black;
+        }
+        v[n] = Visited::grey;
+        for (auto x : g[n]) {
+            if (v[x] == Visited::black) {
+                // no need to keep dfs with node x;
+                continue;
+            } else if (v[x] == Visited::grey || !dfs(x, g, v)) {
+                // if this node is grey or it is not visited yet (white), but this node has loop;
+                return false;
+            }
+        }
+        v[n] = Visited::black;
+        return true;
     }
 };
 
@@ -107,27 +90,44 @@ void print(std::vector<int>& o) {
 // Input: graph = [[1,2],[2,3],[5],[0],[5],[],[]]
 // Output: [2,4,5,6]
 int main() {
+    Solution s;
     std::vector<std::vector<int>> g;
     std::vector<int> v;
-    v = {1,2};
-    g.push_back(v);
-    v = {2,3};
-    g.push_back(v);
-    v = {5};
-    g.push_back(v);
-    v = {0};
-    g.push_back(v);
-    v = {5};
-    g.push_back(v);
-
+    std::vector<int> o;
+#if 1
+    g.push_back({1,2});
+    g.push_back({2,3});
+    g.push_back({5});
+    g.push_back({0});
+    g.push_back({5});
     g.push_back({});
     g.push_back({});
-
-    Solution s;
-    std::vector<int> o = s.eventualSafeNodes(g);
-    
+    // result: 2, 4, 5, 6
+    o = s.eventualSafeNodes(g);
     print(o);
-    
+    o.clear();
+    g.clear();
+
+    g.push_back({1});
+    g.push_back({3});
+    g.push_back({3,5});
+    g.push_back({0,4});
+    g.push_back({2});
+    g.push_back({});
+    // result: 5
+    o = s.eventualSafeNodes(g);
+    print(o);
+#endif 
+    o.clear();
+    g.clear();
+    g.push_back({0});
+    g.push_back({2,3,4});
+    g.push_back({3,4});
+    g.push_back({0,4});
+    g.push_back({});
+    // result: 4
+    o = s.eventualSafeNodes(g);
+    print(o);
 
     return 1;
 }
