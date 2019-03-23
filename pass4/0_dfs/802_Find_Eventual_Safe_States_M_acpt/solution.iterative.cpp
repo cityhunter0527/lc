@@ -43,67 +43,55 @@ public:
     // grey: being visited;
     // black: already visited (could be in loop or not in loop)
     // that's why we need vector loop to indicate whether a node in black is in loop or not;
-    // TODO: remove vector loop and make black only mean node not in loop, and grew mean being visited or in loop
     std::vector<int> eventualSafeNodes(std::vector<std::vector<int>>& graph) {
         std::vector<int> res;
-        std::deque<int> s;
+        std::stack<int> s;
         uint32_t num_nodes = graph.size();
         std::vector<Visited> v(num_nodes, Visited::white);
-        std::vector<bool> loop(num_nodes, false);
         
         uint32_t start = 0, cur = start;
         v[0] = Visited::grey;
-        s.push_front(start); 
+        s.push(start); 
         while (!s.empty()) {
-            cur = s.front();
+            cur = s.top();
             bool dfs = false;
             for (uint32_t i = 0 ; i < graph[cur].size(); i++) {
                 uint32_t n = graph[cur][i];
                 if (v[n] == Visited::white) {
                     v[n] = Visited::grey;
-                    s.push_front(n);
+                    s.push(n);
                     // break out of the for loop to do dfs;
                     dfs = true;
                     break;
-                } else if (v[n] == Visited::grey || loop[n]) {
-                    // 1. if n is grey, there is a loop.
-                    // 2. or if n is already detected in the loop, then we have a loop
-                    // Detect a loop which is from cur(which is s.front()) to n (for #2, there is no need to keep doing dfs with n, because n must be in black);
-                    // Loop from begin until we reach n, mark all these nodes as in loop;
-                    //
-                    for (auto it = s.begin(); it != s.end(); it++) {
-                        loop[*it] = true;
-                    }
-                    continue;
-                } else {
-                    // black
-                    continue;
+                } else if (v[n] == Visited::grey) {
+                    while (!s.empty()) s.pop();
+                    dfs = true;
+                    break;
                 }
+                // for black, we just keep skip dfs with n and move to next 
             }
 
             if (!dfs) {
-                // if dfs is false, all the nodes starting with cur has been visited
-                // if this node is not detected in loop, save it to result
-                if (!loop[cur])  { 
-                    res.push_back(cur);
-                }
+                res.push_back(cur);
                 // mark this node as visited;
                 v[cur] = Visited::black;
                 // pop this node to keep dfs
-                s.pop_front();
+                s.pop();
             }
             
             // it is possible s can be empty, meaning some node are not connected with others, so dfs can not visit such node;
             if (s.empty()) {
                 // pick up an un-visited node;
-                while (start < num_nodes && v[start] == Visited::black) start++; 
+                while (start < num_nodes && v[start] != Visited::white) start++; 
                 if (start < num_nodes) {
                     // keep going with dfs
-                    s.push_front(start);
+                    s.push(start);
                     v[start] = Visited::grey;
                 } 
             }
         }
+
+        // sort the result before return;
         std::sort(res.begin(), res.end());
         return res;
     }
