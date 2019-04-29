@@ -50,53 +50,48 @@ public:
 };
 
 class Solution {
-public: 
-
-    Node* flatten(Node* head) {
-        dfs(head);
-        return head;
-    }
-    Node* dfs(Node* head) {
-        Node* p = head, *prev = nullptr;
-        while (p && !p->child) {
-            prev = p;
-            p = p->next;
-        }
-        if (p) {
-            Node* tmp = p->next;
-            p->next = p->child;
-            p->next->prev = p;
-            p->child = nullptr;
-            p = p->next;
-            Node* tail = dfs(p);
-            tail->next = tmp;
-            tmp->prev = tail;
-        }
-        return prev;
-    }
-#if 0
+public:
     Node* flatten(Node* head) {
         Node* p = head;
         while (p && !p->child) {
-            p = p->next;
+            if (p) {
+                
+            } else {
+                
+            }
         }
-        if (p) {
-            Node* tmp = p->next;
-            p->next = p->child;
-            p->next->prev = p;
-            p->child = nullptr;
-            p = p->next;
-            flatten(p);
-            while (p->next) {
+    }
+
+    // iterative with stack
+    Node* flatten.iterative(Node* head) {
+        if (head == nullptr) return head;
+        std::stack<Node*> s;
+        Node* p = head, *prev = nullptr;
+        s.push(nullptr);
+
+        while (!s.empty()) {
+            while (p && !p->child) { 
+                prev = p; 
+                p = p->next; 
+            }
+            if (!p) {
+                p = s.top();
+                prev->next = p; 
+                if (p) {
+                    p->prev = prev;
+                }
+                s.pop();
+            } else {
+                s.push(p->next);
+                p->next = p->child;
+                p->next->prev = p;
+                p->child = nullptr;
                 p = p->next;
             }
-            p->next = tmp;
-            tmp->prev = p;
         }
-        
+
         return head;
-    } 
-#endif
+    }
 };
 
 
