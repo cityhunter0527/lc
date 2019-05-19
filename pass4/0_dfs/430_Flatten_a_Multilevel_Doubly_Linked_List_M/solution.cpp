@@ -74,29 +74,6 @@ public:
         }
         return prev;
     }
-#if 0
-    Node* flatten(Node* head) {
-        Node* p = head;
-        while (p && !p->child) {
-            p = p->next;
-        }
-        if (p) {
-            Node* tmp = p->next;
-            p->next = p->child;
-            p->next->prev = p;
-            p->child = nullptr;
-            p = p->next;
-            flatten(p);
-            while (p->next) {
-                p = p->next;
-            }
-            p->next = tmp;
-            tmp->prev = p;
-        }
-        
-        return head;
-    } 
-#endif
 };
 
 
